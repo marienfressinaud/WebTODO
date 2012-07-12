@@ -1,0 +1,128 @@
+[Tue, 10 Jul 2012 22:49:47 +0200] [error] Route `/themes/default/base.css` not found
+[Tue, 10 Jul 2012 22:49:48 +0200] [error] Route `/themes/default/base.css` not found
+[Tue, 10 Jul 2012 22:49:48 +0200] [error] Route `/themes/default/base.css` not found
+[Tue, 10 Jul 2012 23:01:48 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/layout/sideMenu.phtml`
+[Tue, 10 Jul 2012 23:01:48 +0200] [error] Route `/themes/default/base.css` not found
+[Tue, 10 Jul 2012 23:01:48 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/layout/sideMenu.phtml`
+[Tue, 10 Jul 2012 23:03:46 +0200] [error] Route `/themes/default/base.css` not found
+[Tue, 10 Jul 2012 23:04:12 +0200] [error] Route `/themes/default/base.css` not found
+[Tue, 10 Jul 2012 23:05:08 +0200] [error] Route `/themes/default/base.css` not found
+[Tue, 10 Jul 2012 23:06:21 +0200] [error] Route `/themes/default/base.css` not found
+[Tue, 10 Jul 2012 23:06:51 +0200] [error] Route `/themes/default/base.css` not found
+[Tue, 10 Jul 2012 23:06:51 +0200] [error] Route `/themes/default/base.css` not found
+[Tue, 10 Jul 2012 23:07:26 +0200] [error] Route `/themes/default/base.css` not found
+[Tue, 10 Jul 2012 23:07:26 +0200] [error] Route `/themes/default/base.css` not found
+[Wed, 11 Jul 2012 08:20:10 +0200] [error] `indexAction` cannot be invoked on `indexController`
+[Wed, 11 Jul 2012 08:20:25 +0200] [error] `indexAction` cannot be invoked on `indexController`
+[Wed, 11 Jul 2012 08:22:10 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/activities.phtml`
+[Wed, 11 Jul 2012 08:22:17 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/activities.phtml`
+[Wed, 11 Jul 2012 08:22:18 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/activities.phtml`
+[Wed, 11 Jul 2012 08:23:10 +0200] [error] Route `/activities` not found
+[Wed, 11 Jul 2012 08:23:17 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/activities.phtml`
+[Wed, 11 Jul 2012 08:23:21 +0200] [error] Route `/inbox` not found
+[Wed, 11 Jul 2012 08:23:26 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/inbox.phtml`
+[Wed, 11 Jul 2012 08:23:30 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/projects.phtml`
+[Wed, 11 Jul 2012 18:07:37 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/projects.phtml`
+[Wed, 11 Jul 2012 18:07:39 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/projects.phtml`
+[Wed, 11 Jul 2012 18:09:07 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/projects.phtml`
+[Wed, 11 Jul 2012 18:09:10 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/projects.phtml`
+[Wed, 11 Jul 2012 18:09:14 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/projects.phtml`
+[Wed, 11 Jul 2012 18:09:43 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/projects.phtml`
+[Wed, 11 Jul 2012 18:10:24 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/projects.phtml`
+[Wed, 11 Jul 2012 18:10:31 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/projects.phtml`
+[Wed, 11 Jul 2012 18:10:38 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/projects.phtml`
+[Wed, 11 Jul 2012 18:10:40 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/inbox.phtml`
+[Wed, 11 Jul 2012 18:10:41 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/activities.phtml`
+[Wed, 11 Jul 2012 18:10:42 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/projects.phtml`
+[Wed, 11 Jul 2012 18:10:43 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/activities.phtml`
+[Wed, 11 Jul 2012 18:10:44 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/inbox.phtml`
+[Wed, 11 Jul 2012 18:13:22 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/inbox.phtml`
+[Wed, 11 Jul 2012 18:13:36 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/inbox.phtml`
+[Wed, 11 Jul 2012 18:13:52 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/activities.phtml`
+[Wed, 11 Jul 2012 18:24:38 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/activities.phtml`
+[Wed, 11 Jul 2012 18:27:42 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/activities.phtml`
+[Wed, 11 Jul 2012 18:28:10 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/activities.phtml`
+[Wed, 11 Jul 2012 18:28:24 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/activities.phtml`
+[Wed, 11 Jul 2012 18:28:49 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/inbox.phtml`
+[Wed, 11 Jul 2012 18:29:49 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/projects.phtml`
+[Wed, 11 Jul 2012 18:29:50 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/inbox.phtml`
+[Wed, 11 Jul 2012 18:43:04 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/activities.phtml`
+[Wed, 11 Jul 2012 18:43:39 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/activities.phtml`
+[Wed, 11 Jul 2012 18:44:44 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/activities.phtml`
+[Wed, 11 Jul 2012 18:44:46 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/projects.phtml`
+[Wed, 11 Jul 2012 18:45:17 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/activities.phtml`
+[Wed, 11 Jul 2012 18:52:12 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/projects.phtml`
+[Wed, 11 Jul 2012 18:52:13 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/activities.phtml`
+[Wed, 11 Jul 2012 19:01:53 +0200] [error] Route `/update_inbox-task_0` not found
+[Wed, 11 Jul 2012 19:04:31 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/activities.phtml`
+[Wed, 11 Jul 2012 19:04:32 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/projects.phtml`
+[Wed, 11 Jul 2012 19:04:33 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/activities.phtml`
+[Wed, 11 Jul 2012 19:10:49 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/activities.phtml`
+[Wed, 11 Jul 2012 19:10:55 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/projects.phtml`
+[Wed, 11 Jul 2012 19:10:59 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/activities.phtml`
+[Wed, 11 Jul 2012 19:11:37 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/activities.phtml`
+[Wed, 11 Jul 2012 19:11:40 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/activities.phtml`
+[Wed, 11 Jul 2012 19:11:45 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/activities.phtml`
+[Wed, 11 Jul 2012 19:11:56 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/activities.phtml`
+[Wed, 11 Jul 2012 19:11:59 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/activities.phtml`
+[Wed, 11 Jul 2012 19:12:15 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/activities.phtml`
+[Wed, 11 Jul 2012 19:14:33 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/activities.phtml`
+[Wed, 11 Jul 2012 19:14:35 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/projects.phtml`
+[Wed, 11 Jul 2012 19:14:35 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/activities.phtml`
+[Wed, 11 Jul 2012 19:14:44 +0200] [error] Route `/update_inbox-task_2` not found
+[Wed, 11 Jul 2012 19:14:46 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/activities.phtml`
+[Wed, 11 Jul 2012 19:14:49 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/activities.phtml`
+[Wed, 11 Jul 2012 19:14:52 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/activities.phtml`
+[Wed, 11 Jul 2012 19:14:53 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/activities.phtml`
+[Wed, 11 Jul 2012 19:15:48 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/activities.phtml`
+[Wed, 11 Jul 2012 19:17:07 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/activities.phtml`
+[Wed, 11 Jul 2012 19:17:09 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/projects.phtml`
+[Wed, 11 Jul 2012 19:17:10 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/activities.phtml`
+[Wed, 11 Jul 2012 19:17:14 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/activities.phtml`
+[Wed, 11 Jul 2012 19:17:15 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/projects.phtml`
+[Wed, 11 Jul 2012 19:18:23 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/activities.phtml`
+[Wed, 11 Jul 2012 19:18:27 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/activities.phtml`
+[Wed, 11 Jul 2012 19:18:29 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/projects.phtml`
+[Wed, 11 Jul 2012 19:18:31 +0200] [error] Route `/update_inbox-task_0` not found
+[Wed, 11 Jul 2012 19:19:02 +0200] [error] Route `/update_inbox-task_2` not found
+[Wed, 11 Jul 2012 19:19:05 +0200] [error] Route `/update_inbox-task_2` not found
+[Wed, 11 Jul 2012 19:19:06 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/activities.phtml`
+[Wed, 11 Jul 2012 19:19:14 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/projects.phtml`
+[Wed, 11 Jul 2012 19:19:15 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/activities.phtml`
+[Wed, 11 Jul 2012 19:19:22 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/activities.phtml`
+[Wed, 11 Jul 2012 19:19:23 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/activities.phtml`
+[Wed, 11 Jul 2012 19:19:25 +0200] [error] Route `/update_inbox-task_2` not found
+[Wed, 11 Jul 2012 19:19:27 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/activities.phtml`
+[Wed, 11 Jul 2012 19:19:28 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/projects.phtml`
+[Wed, 11 Jul 2012 19:19:29 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/activities.phtml`
+[Wed, 11 Jul 2012 19:21:08 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/projects.phtml`
+[Wed, 11 Jul 2012 19:21:10 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/activities.phtml`
+[Wed, 11 Jul 2012 19:21:46 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/activities.phtml`
+[Wed, 11 Jul 2012 19:21:48 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/projects.phtml`
+[Wed, 11 Jul 2012 19:21:49 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/projects.phtml`
+[Wed, 11 Jul 2012 19:21:50 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/activities.phtml`
+[Wed, 11 Jul 2012 19:23:10 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/activities.phtml`
+[Wed, 11 Jul 2012 19:24:02 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/projects.phtml`
+[Wed, 11 Jul 2012 19:30:30 +0200] [error] Route `/supprimer_inbox-tache_0` not found
+[Wed, 11 Jul 2012 19:30:49 +0200] [error] Route `/supprimer_inbox-tache_1` not found
+[Wed, 11 Jul 2012 19:31:18 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/activities.phtml`
+[Wed, 11 Jul 2012 19:38:33 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/task/delete.phtml`
+[Wed, 11 Jul 2012 19:38:44 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/task/delete.phtml`
+[Wed, 11 Jul 2012 19:42:50 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/activities.phtml`
+[Wed, 11 Jul 2012 19:43:40 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/activities.phtml`
+[Wed, 11 Jul 2012 19:43:42 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/projects.phtml`
+[Wed, 11 Jul 2012 19:46:49 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/projects.phtml`
+[Wed, 11 Jul 2012 19:46:51 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/activities.phtml`
+[Wed, 11 Jul 2012 19:47:01 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/activities.phtml`
+[Wed, 11 Jul 2012 19:49:41 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/activities.phtml`
+[Wed, 11 Jul 2012 20:01:09 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/activities.phtml`
+[Wed, 11 Jul 2012 20:01:45 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/projects.phtml`
+[Wed, 11 Jul 2012 20:13:33 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/activities.phtml`
+[Wed, 11 Jul 2012 20:13:35 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/projects.phtml`
+[Wed, 11 Jul 2012 20:20:49 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/activities.phtml`
+[Wed, 11 Jul 2012 20:20:50 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/projects.phtml`
+[Wed, 11 Jul 2012 20:20:51 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/activities.phtml`
+[Wed, 11 Jul 2012 20:20:52 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/projects.phtml`
+[Wed, 11 Jul 2012 20:30:25 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/activities.phtml`
+[Wed, 11 Jul 2012 20:30:34 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/activities.phtml`
+[Wed, 11 Jul 2012 20:30:54 +0200] [warning] File doesn't exist : `/home/marien/.public_html/todo/app/views/index/activities.phtml`

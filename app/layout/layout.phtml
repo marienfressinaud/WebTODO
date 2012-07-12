@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<link rel="icon" type="image/ico" href="<?php echo Url::display ('/favicon.ico'); ?>" />
+		<?php echo self::headTitle(); ?>
+		<?php echo self::headStyle(); ?>
+		<?php echo self::headScript(); ?>
+	</head>
+	<body>
+
+<div id="global">
+	<div id="menu">
+		<div id="addTaskMenu">
+			<form method="post" action="<?php echo Url::display (array ('c' => 'task', 'a' => 'add')); ?>">
+				<input type="text" name="task" placeholder="Ajouter une activité" />
+				<input type="submit" value="+" />
+			</form>
+		</div>
+		
+		<div id="sideMenu">
+<?php $this->partial ('sideMenu'); ?>
+		</div>
+	</div>
+	
+	<div id="content">
+<?php $this->render (); ?>
+	</div>
+</div>
+
+	</body>
+</html>

@@ -1,0 +1,14 @@
+<?php
+return array (
+	'inbox' => array (
+		0 => array (
+			'libelleTask' => 'Faire ma lessive',
+		),
+		1 => array (
+			'libelleTask' => 'Faire des courses',
+		),
+		2 => array (
+			'libelleTask' => 'Faire le ménage',
+		),
+	),
+);

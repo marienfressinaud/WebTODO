@@ -1,0 +1,57 @@
+* {
+	margin: 0; padding: 0;
+	}
+html, body {
+	height: 100%;
+	}
+
+ul {
+	list-style: none;
+	}
+	ul li * {
+		display: inline-block; height: 20px; width: 90%; padding: 15px 5%;
+		color: #000; text-decoration: none; line-height: 20px;
+		}
+	ul li.active * {
+		background: #4499dd; color: #fff;
+		}
+
+#global {
+	display: table; width: 100%; height: 100%;
+	}
+	#global #menu {
+		display: table-cell; width: 20%;
+		border-right: 1px solid #999;
+		}
+		#global #menu #addTaskMenu form {
+			display: table; width: 100%; height: 49px;
+			background: #eee; border-bottom: 1px solid #999; text-align: center;
+			}
+			#global #menu #addTaskMenu input {
+				display: table-cell; height: 49px;
+				}
+				#global #menu #addTaskMenu input[type="text"] {
+					width: 80%;
+					border: none;
+					}
+				#global #menu #addTaskMenu input[type="submit"] {
+					width: 20%;
+					border: none; background: #ddd; cursor: pointer;
+					}
+	#global #content {
+		display: table-cell; width: 100%;
+		}
+		#global #content #inboxPanel {
+			display: table; height: 100%; width: 100%;
+			}
+			#global #content #inboxPanel #listTasks {
+				display: table-cell; width: 50%;
+				border-right: 1px solid #999;
+				}
+			#global #content #inboxPanel #manageTask {
+				display: table-cell; width: 50%;
+				}
+				#global #content #inboxPanel #manageTask h2 {
+					display: inline-block; height: 20px; width: 90%; padding: 15px 5%;
+					background: #999; color: #fff; font-weight: bold; text-align: center; line-height: 20px;
+					}

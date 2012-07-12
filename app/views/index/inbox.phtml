@@ -1,0 +1,41 @@
+<div id="inboxPanel">
+	<?php if (!empty ($this->tasks)) { ?>
+	<div id="listTasks">
+		<ul>
+			<?php 
+				$tasks = array_reverse ($this->tasks);
+				$first = true;
+			?>
+			<?php foreach ($tasks as $task) { ?>
+			<li <?php if ($first) { $first = false; echo 'class="active"'; } ?>>
+				<span><?php echo $task->libelle (); ?></span>
+			</li>
+			<?php } ?>
+		</ul>
+	</div>
+	
+	<?php $task = $tasks[0]; ?>
+	<div id="manageTask">
+		<h2><?php echo $task->libelle (); ?></h2>
+		<form method="post" action="<?php echo Url::display (array ('c' => 'task', 'a' => 'validate')); ?>">
+			<label for="date">Date</label>
+			<input type="date" name="date" id="date" />
+			<label for="reference">Référencer</label>
+			<input type="text" name="reference" id="reference" />
+			<label for="contexte">Contexte</label>
+			<select name="contexte" id="contexte" multiple="multiple">
+				<option value="0">À la maison</option>
+				<option value="1">Au boulot</option>
+				<option value="2">Au téléphone</option>
+				<option value="3">Courses</option>
+				<option value="4">Sur l'ordinateur</option>
+			</select>
+			<textarea name="notes" placeholder="Ajouter des notes"></textarea>
+			<a href="<?php echo Url::display (array ('c' => 'task', 'a' => 'delete', 'params' => array ('id' => $task->id (), 'type' => 'inbox'))); ?>">Supprimer la tâche</a>
+			<input type="submit" value="Valider" />
+		</form>
+	</div>
+	<?php } else { ?>
+	<div class="nothing">Il n'a pas de tâches dans la boîte d'entrée.</div>
+	<?php } ?>
+</div>
