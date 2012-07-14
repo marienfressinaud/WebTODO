@@ -1,14 +1,57 @@
 <?php
 return array (
 	'inbox' => array (
+	),
+	'event' => array (
 		0 => array (
-			'libelleTask' => 'Faire ma lessive',
+			'libelleTask' => 'Soirée chez Nico et Marine',
+			'dateTask' => 1344636000,
+			'contextTask' => array (
+			),
+			'notesTask' => 'Tout le week end !! :)',
 		),
+	),
+	'reminder' => array (
 		1 => array (
-			'libelleTask' => 'Faire des courses',
+			'libelleTask' => 'Faire les courses',
+			'dateTask' => 1342389600,
+			'contextTask' => array (
+				0 => 3,
+			),
+			'notesTask' => 'Lait, brioche, chat',
 		),
 		2 => array (
-			'libelleTask' => 'Faire le ménage',
+			'libelleTask' => 'Faire ma lessive',
+			'dateTask' => 1342216800,
+			'contextTask' => array (
+				0 => 0,
+			),
+			'notesTask' => 'Non de zeus !',
+		),
+		3 => array (
+			'libelleTask' => 'trolo',
+			'dateTask' => 1342371380,
+			'contextTask' => array (
+				0 => 1,
+				1 => 2,
+				2 => 3,
+				3 => 4,
+			),
+			'notesTask' => '',
+		),
+		4 => array (
+		),
+	),
+	'action' => array (
+		0 => array (
+			'libelleTask' => 'Acheter Dirty Radio de Sallie Ford',
+			'dateTask' => '01/01/1970',
+			'contextTask' => array (
+				0 => 0,
+				1 => 3,
+				2 => 4,
+			),
+			'notesTask' => 'Version cd',
 		),
 	),
 );

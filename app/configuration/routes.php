@@ -12,16 +12,17 @@ return array (
 		'action'     => 'activities'
 	),
 	array (
-		'route'      => '/boite-entree',
+		'route'      => '/boite-de-reception',
 		'controller' => 'index',
 		'action'     => 'inbox'
 	),
 	array (
-		'route'      => '/projets',
+		'route'      => '/parametrage',
 		'controller' => 'index',
-		'action'     => 'projects'
+		'action'     => 'configuration'
 	),
 	
+	/////
 	array (
 		'route'      => '/ajouter_tache',
 		'controller' => 'task',
@@ -33,15 +34,21 @@ return array (
 		'action'     => 'validate'
 	),
 	array (
-		'route'      => '/maj_(\w+)-tache_(\d+)',
-		'controller' => 'task',
-		'action'     => 'update',
-		'params'     => array ('type', 'id')
-	),
-	array (
 		'route'      => '/supprimer_(\w+)-tache_(\d+)',
 		'controller' => 'task',
 		'action'     => 'delete',
+		'params'     => array ('type', 'id')
+	),
+	array (
+		'route'      => '/voir_(\w+)-tache_(\d+)',
+		'controller' => 'task',
+		'action'     => 'see',
+		'params'     => array ('type', 'id')
+	),
+	array (
+		'route'      => '/archive_(\w+)-tache_(\d+)',
+		'controller' => 'task',
+		'action'     => 'archive',
 		'params'     => array ('type', 'id')
 	),
 );

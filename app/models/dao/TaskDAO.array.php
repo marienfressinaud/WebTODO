@@ -1,16 +1,31 @@
 <?php
 
 class TaskDAO extends Model_array {
-	public function __construct () {
-		parent::__construct (PUBLIC_PATH . '/data/tasks');
+	public function __construct ($file = 'tasks') {
+		parent::__construct (PUBLIC_PATH . '/data/' . $file);
 		
 		if (!isset ($this->array['inbox'])) {
 			$this->array['inbox'] = array ();
 		}
+		if (!isset ($this->array['event'])) {
+			$this->array['event'] = array ();
+		}
+		if (!isset ($this->array['reminder'])) {
+			$this->array['reminder'] = array ();
+		}
+		if (!isset ($this->array['action'])) {
+			$this->array['action'] = array ();
+		}
 	}
 	
-	public function addTask ($values) {
-		$this->array['inbox'][]['libelleTask'] = $values ['libelleTask'];
+	public function addTask ($values, $type) {
+		$this->array[$type][] = array ();
+		
+		$keyTask = count ($this->array[$type]) - 1;
+		foreach ($values as $key => $value) {
+			$this->array[$type][$keyTask][$key] = $value;
+		}
+		
 		$this->writeFile($this->array);
 	}
 	
@@ -34,6 +49,11 @@ class TaskDAO extends Model_array {
 			$tasks = array ();
 		}
 		
-		return HelperTask::listeDaoToTask ($tasks);
+		return HelperTask::daoToTask ($tasks, $type);
+	}
+	
+	public function searchTask ($id, $type) {
+		$tasks = HelperTask::daoToTask ($this->array[$type], $type);
+		return $tasks[$id];
 	}
 }
