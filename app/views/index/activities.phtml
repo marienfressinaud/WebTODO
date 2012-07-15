@@ -1,0 +1,63 @@
+<div id="panel">
+	<div id="choosePanel">
+		<h2>Options</h2>
+		<form method="post" action="">
+			Le <input type="date" name="date" id="date" placeholder="Annee-Mois-Jour" value="<?php echo $this->day; ?>" />
+			
+			<?php foreach ($this->contexts as $context) { ?>
+			<br />
+			<input type="checkbox" name="contexts[]" id="check_<?php echo $context->id (); ?>" value="<?php echo $context->id (); ?>" <?php if (in_array ($context->id (), $this->contextsCheck)) { echo 'checked="checked"'; } ?>/>
+			<label for="check_<?php echo $context->id (); ?>" class="for_checkbox"><?php echo $context->libelle (); ?></label>
+			<?php } ?><br />
+			
+			<input type="submit" value="Actualiser" />
+		</form>
+	</div>
+	
+	<?php if (!empty ($this->tasks)) { ?>
+	<div id="listTasks">
+		<div class="line">
+			<div class="cell">
+			<h2>À faire le <?php echo $this->day; ?></h2>
+			<ul>
+				<?php foreach ($this->tasks as $task) { ?>
+				<li class="<?php echo $task->type (); ?><?php if ($task == $this->task) { echo ' active'; } ?>">
+					<a href="<?php echo Url::display (array ('c' => 'task', 'a' => 'see', 'params' => array ('id' => $task->id (), 'type' => $task->type ()))); ?>"><?php echo $task->libelle (); ?></a>
+				</li>
+				<?php } ?>
+			</ul>
+			</div>
+		</div>
+		
+		<?php if (isset ($this->task)) { ?>
+		<div id="detailTask" class="line">
+			<div class="cell">
+			<form method="post" action="">
+				<?php if ($this->task->date (true) > 0) { ?>
+				<label for="date">Date</label>
+				<span class="info" id="date"><?php echo $this->task->date (); ?></span>
+				<?php } ?>
+				<label for="reference">Référence</label>
+				<span class="info" id="reference"><?php echo $this->task->type (); ?></span>
+				<label for="context">Contexte</label>
+				<span  class="info" id="context">
+					<?php foreach ($this->task->context (true) as $context) { ?>
+					<?php echo $context; ?><br />
+					<?php } ?>
+				</span>
+				<?php $notes = $this->task->notes (); ?>
+				<?php if (!empty ($notes)) { ?>
+				<label for="notes">Notes</label>
+				<span class="info" id="notes"><?php echo $notes; ?></span>
+				<?php } ?>
+
+				<a class="button submit" href="<?php echo Url::display (array ('c' => 'task', 'a' => 'archive', 'params' => array ('id' => $this->task->id (), 'type' => $this->task->type ()))); ?>">Marquée comme terminée</a>
+			</form>
+			</div>
+		</div>
+		<?php } ?>
+	</div>
+	<?php } else { ?>
+	<div class="nothing">Vous n'avez rien à faire.</div>
+	<?php } ?>
+</div>

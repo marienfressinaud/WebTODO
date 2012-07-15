@@ -1,0 +1,75 @@
+<?php
+return array (
+	'inbox' => array (
+	),
+	'event' => array (
+		0 => array (
+			'libelleTask' => 'Bla',
+			'dateTask' => '15/07/2012',
+			'contextTask' => array (
+			),
+			'notesTask' => '',
+		),
+	),
+	'reminder' => array (
+	),
+	'action' => array (
+		1 => array (
+			'libelleTask' => '',
+			'dateTask' => '01/01/1970',
+			'contextTask' => array (
+			),
+			'notesTask' => '',
+		),
+		2 => array (
+			'libelleTask' => 'Très bla',
+			'dateTask' => '01/01/1970',
+			'contextTask' => array (
+				0 => 0,
+				1 => 1,
+				2 => 2,
+				3 => 3,
+				4 => 4,
+			),
+			'notesTask' => '',
+		),
+		3 => array (
+			'libelleTask' => 'Bla',
+			'dateTask' => '01/01/1970',
+			'contextTask' => array (
+				0 => 0,
+				1 => 1,
+				2 => 2,
+				3 => 3,
+				4 => 4,
+			),
+			'notesTask' => '',
+		),
+		4 => array (
+			'libelleTask' => 'Bla',
+			'dateTask' => '01/01/1970',
+			'contextTask' => array (
+				0 => 0,
+				1 => 1,
+				2 => 2,
+				3 => 3,
+				4 => 4,
+			),
+			'notesTask' => '',
+		),
+		5 => array (
+			'libelleTask' => 'test',
+			'dateTask' => '01/01/1970',
+			'contextTask' => array (
+				0 => 0,
+				1 => 1,
+				2 => 2,
+				3 => 3,
+				4 => 4,
+			),
+			'notesTask' => '',
+		),
+		6 => array (
+		),
+	),
+);

@@ -1,0 +1,18 @@
+<?php
+return array (
+	0 => array (
+		'libelleContext' => 'À la maison',
+	),
+	1 => array (
+		'libelleContext' => 'Au boulot',
+	),
+	2 => array (
+		'libelleContext' => 'Au téléphone',
+	),
+	3 => array (
+		'libelleContext' => 'Courses',
+	),
+	4 => array (
+		'libelleContext' => 'Sur l\'ordinateur',
+	),
+);
