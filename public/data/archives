@@ -23,6 +23,14 @@ return array (
 			),
 			'notesTask' => '',
 		),
+		1 => array (
+			'libelleTask' => 'Faire ma lessive',
+			'dateTask' => '14/07/2012',
+			'contextTask' => array (
+				0 => 0,
+			),
+			'notesTask' => 'Non de zeus !',
+		),
 	),
 	'action' => array (
 		2 => array (

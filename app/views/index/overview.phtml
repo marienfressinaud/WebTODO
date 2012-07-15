@@ -7,7 +7,7 @@
 			<ul>
 				<?php foreach ($this->tasks as $task) { ?>
 				<li class="<?php echo $task->type (); ?>">
-					<span><?php echo $task->libelle (); ?></span>
+					<a href="<?php echo Url::display (array ('c' => 'task', 'a' => 'see', 'params' => array ('id' => $task->id (), 'type' => $task->type ()))); ?>"><?php echo $task->libelle (); ?></a>
 				</li>
 				<?php } ?>
 			</ul>

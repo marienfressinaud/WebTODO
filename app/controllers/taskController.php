@@ -87,6 +87,10 @@ class taskController extends ActionController {
 					'type' => $type
 				)
 			);
+			
+			$task = $taskDAO->searchTask ($id, $type);
+			Session::_param ('date', $task->date (true));
+			Session::_param ('contexts', $task->context ());
 		}
 		
 		Request::forward (array ('a' => 'activities'), true);

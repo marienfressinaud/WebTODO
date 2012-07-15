@@ -23,7 +23,7 @@ ul {
 		background-color: #4499dd !important; color: #fff;
 		}
 	ul li.disable * {
-		background-color: #eee !important; color: #999;
+		background-color: #eee !important; color: #666; opacity: 0.5;
 		}
 	ul li:hover * {
 		background-color: #ddd;
