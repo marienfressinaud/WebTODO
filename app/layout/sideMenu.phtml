@@ -5,6 +5,9 @@
 	<li <?php if (Request::actionName () == 'inbox') { echo 'class="active"'; } ?>>
 		<a href="<?php echo Url::display (array ('a' => 'inbox')); ?>">Ranger la boîte de réception</a>
 	</li>
+	<li <?php if (Request::actionName () == 'overview') { echo 'class="active"'; } ?>>
+		<a href="<?php echo Url::display (array ('a' => 'overview')); ?>">Vue d'ensemble</a>
+	</li>
 	<li <?php if (Request::actionName () == 'configuration') { echo 'class="active"'; } ?>>
 		<a href="<?php echo Url::display (array ('a' => 'configuration')); ?>">Paramétrer</a>
 	</li>

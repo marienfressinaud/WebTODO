@@ -12,15 +12,19 @@ return array (
 		),
 	),
 	'reminder' => array (
-	),
-	'action' => array (
-		1 => array (
-			'libelleTask' => '',
-			'dateTask' => '01/01/1970',
+		0 => array (
+			'libelleTask' => 'trolo',
+			'dateTask' => '15/07/2012',
 			'contextTask' => array (
+				0 => 1,
+				1 => 2,
+				2 => 3,
+				3 => 4,
 			),
 			'notesTask' => '',
 		),
+	),
+	'action' => array (
 		2 => array (
 			'libelleTask' => 'Très bla',
 			'dateTask' => '01/01/1970',
@@ -70,6 +74,14 @@ return array (
 			'notesTask' => '',
 		),
 		6 => array (
+			'libelleTask' => 'Acheter Dirty Radio de Sallie Ford',
+			'dateTask' => '01/01/1970',
+			'contextTask' => array (
+				0 => 0,
+				1 => 3,
+				2 => 4,
+			),
+			'notesTask' => 'Version cd',
 		),
 	),
 );

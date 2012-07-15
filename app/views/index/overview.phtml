@@ -1,0 +1,31 @@
+<div id="panel">
+	<?php if (!empty ($this->tasks)) { ?>
+	<div id="listTasks">
+		<div class="line">
+			<div class="cell">
+			<h2>Activités</h2>
+			<ul>
+				<?php foreach ($this->tasks as $task) { ?>
+				<li class="<?php echo $task->type (); ?>">
+					<span><?php echo $task->libelle (); ?></span>
+				</li>
+				<?php } ?>
+			</ul>
+			
+			<?php if (!empty ($this->tasksArchive)) { ?>
+			<h2>Archives</h2>
+			<ul>
+				<?php foreach ($this->tasksArchive as $task) { ?>
+				<li class="<?php echo $task->type (); ?> disable">
+					<span><?php echo $task->libelle (); ?></span>
+				</li>
+				<?php } ?>
+			</ul>
+			<?php } ?>
+			</div>
+		</div>
+	</div>
+	<?php } else { ?>
+	<div class="nothing">Vous n'avez rien à faire.</div>
+	<?php } ?>
+</div>

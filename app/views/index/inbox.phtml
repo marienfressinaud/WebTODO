@@ -29,7 +29,7 @@
 			</select>
 			
 			<label for="context">Contexte</label>
-			<select name="context[]" id="context" multiple="multiple">
+			<select class="multi" name="context[]" id="context" multiple="multiple">
 				<?php foreach ($this->contexts as $context) { ?>
 				<option value="<?php echo $context->id (); ?>"><?php echo $context->libelle (); ?></option>
 				<?php } ?>

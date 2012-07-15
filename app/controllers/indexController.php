@@ -57,6 +57,7 @@ class indexController extends ActionController {
 		$task = Session::param ('task');
 		if ($task !== false) {
 			$this->view->task = $taskDAO->searchTask ($task['id'], $task['type']);
+			Session::_param ('task');
 		}
 	}
 	
@@ -66,6 +67,22 @@ class indexController extends ActionController {
 		
 		$this->view->tasks = $taskDAO->listTasks ('inbox');
 		$this->view->contexts = $contextDAO->listContexts ();
+	}
+	
+	public function overviewAction () {
+		$taskDAO = new TaskDAO ();
+		$taskArchiveDAO = new TaskDAO ('archives');
+		$contextDAO = new ContextDAO ();
+		
+		$events = $taskDAO->listTasks ('event');
+		$reminders = $taskDAO->listTasks ('reminder');
+		$actions = $taskDAO->listTasks ('action');
+		$this->view->tasks = array_merge ($events, $reminders, $actions);
+		
+		$events = $taskArchiveDAO->listTasks ('event');
+		$reminders = $taskArchiveDAO->listTasks ('reminder');
+		$actions = $taskArchiveDAO->listTasks ('action');
+		$this->view->tasksArchive = array_merge ($events, $reminders, $actions);
 	}
 	
 	public function configurationAction () {

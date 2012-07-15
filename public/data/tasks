@@ -1,6 +1,9 @@
 <?php
 return array (
 	'inbox' => array (
+		0 => array (
+			'libelleTask' => 'Bla',
+		),
 	),
 	'event' => array (
 		0 => array (
@@ -28,30 +31,7 @@ return array (
 			),
 			'notesTask' => 'Non de zeus !',
 		),
-		3 => array (
-			'libelleTask' => 'trolo',
-			'dateTask' => 1342371380,
-			'contextTask' => array (
-				0 => 1,
-				1 => 2,
-				2 => 3,
-				3 => 4,
-			),
-			'notesTask' => '',
-		),
-		4 => array (
-		),
 	),
 	'action' => array (
-		0 => array (
-			'libelleTask' => 'Acheter Dirty Radio de Sallie Ford',
-			'dateTask' => '01/01/1970',
-			'contextTask' => array (
-				0 => 0,
-				1 => 3,
-				2 => 4,
-			),
-			'notesTask' => 'Version cd',
-		),
 	),
 );

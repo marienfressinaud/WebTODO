@@ -17,6 +17,11 @@ return array (
 		'action'     => 'inbox'
 	),
 	array (
+		'route'      => '/vue-d-ensemble',
+		'controller' => 'index',
+		'action'     => 'overview'
+	),
+	array (
 		'route'      => '/parametrage',
 		'controller' => 'index',
 		'action'     => 'configuration'
