@@ -22,7 +22,7 @@
 			<ul>
 				<?php foreach ($this->tasks as $task) { ?>
 				<li class="<?php echo $task->type (); ?><?php if ($task == $this->task) { echo ' active'; } ?>">
-					<a href="<?php echo Url::display (array ('c' => 'task', 'a' => 'see', 'params' => array ('id' => $task->id (), 'type' => $task->type ()))); ?>"><?php echo $task->libelle (); ?></a>
+					<a href="<?php echo Url::display (array ('c' => 'task', 'a' => 'see', 'params' => array ('id' => $task->id (), 'type' => $task->type (), 'session' => false))); ?>"><?php echo $task->libelle (); ?></a>
 				</li>
 				<?php } ?>
 			</ul>

@@ -78,6 +78,7 @@ class taskController extends ActionController {
 		
 		$id = Request::param ('id');
 		$type = Request::param ('type');
+		$session = Request::param ('session');
 		
 		if (in_array ($type, Task::$TYPES)) {
 			Session::_param (
@@ -88,9 +89,16 @@ class taskController extends ActionController {
 				)
 			);
 			
-			$task = $taskDAO->searchTask ($id, $type);
-			Session::_param ('date', $task->date (true));
-			Session::_param ('contexts', $task->context ());
+			if ($session) {
+				$task = $taskDAO->searchTask ($id, $type);
+				$date = $task->date (true);
+				if ($date == 0) {
+					$date = time ();
+				}
+			
+				Session::_param ('date', $date);
+				Session::_param ('contexts', $task->context ());
+			}
 		}
 		
 		Request::forward (array ('a' => 'activities'), true);

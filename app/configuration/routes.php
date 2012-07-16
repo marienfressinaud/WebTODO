@@ -45,10 +45,10 @@ return array (
 		'params'     => array ('type', 'id')
 	),
 	array (
-		'route'      => '/voir_(\w+)-tache_(\d+)',
+		'route'      => '/change_(\w+)-tache_(\d+)-(\d?)',
 		'controller' => 'task',
 		'action'     => 'see',
-		'params'     => array ('type', 'id')
+		'params'     => array ('type', 'id', 'session')
 	),
 	array (
 		'route'      => '/archive_(\w+)-tache_(\d+)',
