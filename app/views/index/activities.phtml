@@ -37,24 +37,33 @@
 				<label for="date">Date</label>
 				<span class="info" id="date"><?php echo $this->task->date (); ?></span>
 				<?php } ?>
+				
 				<label for="reference">Référence</label>
 				<span class="info" id="reference"><?php echo $this->task->type (); ?></span>
+				
 				<label for="context">Contexte</label>
 				<span  class="info" id="context">
 					<?php foreach ($this->task->context (true) as $context) { ?>
 					<?php echo $context; ?><br />
 					<?php } ?>
 				</span>
+				
 				<?php $notes = $this->task->notes (); ?>
 				<?php if (!empty ($notes)) { ?>
 				<label for="notes">Notes</label>
 				<span class="info" id="notes"><?php echo $notes; ?></span>
 				<?php } ?>
-
-				<a class="button submit" href="<?php echo Url::display (array ('c' => 'task', 'a' => 'archive', 'params' => array ('id' => $this->task->id (), 'type' => $this->task->type ()))); ?>">Marquée comme terminée</a>
 			</form>
+			
+			<a class="button" href="<?php echo Url::display (array ('c' => 'task', 'a' => 'archive', 'params' => array ('id' => $this->task->id (), 'type' => $this->task->type ()))); ?>">Marquée comme terminée</a>
 			</div>
 		</div>
+		
+		<script type="text/javascript">
+		height = ($('body').height () - 50) / 2;
+		$('#listTasks .line .cell ul').height (height);
+		$('#detailTask form').height (height - 50);
+		</script>
 		<?php } ?>
 	</div>
 	<?php } else { ?>

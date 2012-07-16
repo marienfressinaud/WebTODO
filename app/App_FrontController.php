@@ -22,6 +22,5 @@ class App_FrontController extends FrontController {
 	
 	private function initView () {
 		View::appendStyle (Url::display ('/themes/default/base.css'));
-		View::appendScript (Url::display ('/scripts/jquery.js'));;
 	}
 }
