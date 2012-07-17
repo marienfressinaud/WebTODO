@@ -64,6 +64,11 @@
 		$('#listTasks .line .cell ul').height (height);
 		$('#detailTask form').height (height - 50);
 		</script>
+		<?php } else { ?>
+		<script type="text/javascript">
+		height = $('body').height () - 50;
+		$('#listTasks .line .cell ul').height (height);
+		</script>
 		<?php } ?>
 	</div>
 	<?php } else { ?>

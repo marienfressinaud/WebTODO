@@ -21,6 +21,16 @@
 				</li>
 				<?php } ?>
 			</ul>
+			
+			<script type="text/javascript">
+			height = ($('body').height () - 50) / 2;
+			$('#listTasks .line .cell ul').height (height);
+			</script>
+			<?php } else { ?>
+			<script type="text/javascript">
+			height = ($('body').height () - 50);
+			$('#listTasks .line .cell ul').height (height);
+			</script>
 			<?php } ?>
 			</div>
 		</div>
