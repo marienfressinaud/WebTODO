@@ -7,14 +7,5 @@ return array (
 	'reminder' => array (
 	),
 	'action' => array (
-		0 => array (
-			'libelleTask' => 'À lire http://www.rue89.com/2012/07/15/ma-therapie-ex-gay-ou-comment-je-ne-suis-pas-devenu-hetero-233827',
-			'dateTask' => '01/01/1970',
-			'contextTask' => array (
-				0 => 0,
-				1 => 4,
-			),
-			'notesTask' => '',
-		),
 	),
 );

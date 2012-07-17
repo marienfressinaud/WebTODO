@@ -27,11 +27,8 @@ class indexController extends ActionController {
 		}
 		
 		// Gestion de la date à afficher
-		$date = Session::param ('date', time ());
-		$this->view->day = date ('Y', $date) . '-'
-		                 . date ('m', $date) . '-'
-		                 . date ('d', $date);
-		$day = strtotime ($this->view->day);
+		$day = Session::param ('date', time ());
+		$this->view->day = $day;
 		
 		$this->view->contextsCheck = Session::param ('contexts', array ());
 		

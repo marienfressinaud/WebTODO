@@ -2,7 +2,7 @@
 	<div id="choosePanel">
 		<h2>Options</h2>
 		<form method="post" action="">
-			<input type="date" name="date" id="date" placeholder="Annee-Mois-Jour" value="<?php echo $this->day; ?>" />
+			<input type="date" name="date" id="date" placeholder="Annee-Mois-Jour" value="<?php echo date ('Y-m-d', $this->day); ?>" />
 			
 			<?php foreach ($this->contexts as $context) { ?>
 			<br />
@@ -18,7 +18,7 @@
 	<div id="listTasks">
 		<div class="line">
 			<div class="cell">
-			<h2>À faire le <?php echo $this->day; ?></h2>
+			<h2>À faire le <?php echo date ('d/m/Y', $this->day); ?></h2>
 			<ul>
 				<?php foreach ($this->tasks as $task) { ?>
 				<li class="<?php echo $task->type (); ?><?php if ($task == $this->task) { echo ' active'; } ?>">
