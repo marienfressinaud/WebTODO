@@ -20,7 +20,7 @@ ul {
 		background: url("img/reminder.png") no-repeat 10px center;
 		}
 	ul li.delay * {
-		background-color: #fdd !important;
+		background-color: #fdd;
 		}
 	ul li.active * {
 		background-color: #4499dd !important; color: #fff;
@@ -31,6 +31,9 @@ ul {
 	ul li:hover * {
 		background-color: #ddd;
 		}
+		ul li.delay:hover * {
+			background-color: #ecc;
+			}
 
 h2 {
 	display: inline-block; min-height: 20px; width: 90%; padding: 15px 5%;
