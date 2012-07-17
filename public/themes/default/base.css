@@ -19,6 +19,9 @@ ul {
 	ul li.reminder * {
 		background: url("img/reminder.png") no-repeat 10px center;
 		}
+	ul li.delay * {
+		background-color: #fdd !important;
+		}
 	ul li.active * {
 		background-color: #4499dd !important; color: #fff;
 		}

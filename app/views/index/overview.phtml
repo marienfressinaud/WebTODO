@@ -6,7 +6,14 @@
 			<h2>Activités</h2>
 			<ul>
 				<?php foreach ($this->tasks as $task) { ?>
-				<li class="<?php echo $task->type (); ?>">
+				<?php 
+					$class = $task->type ();
+					if ($task->date (true) != 0
+					 && $task->date (true) < $this->today) {
+						$class .= ' delay';
+					}
+				?>
+				<li class="<?php echo $class; ?>">
 					<a href="<?php echo Url::display (array ('c' => 'task', 'a' => 'see', 'params' => array ('id' => $task->id (), 'type' => $task->type (), 'session' => true))); ?>"><?php echo $task->libelle (); ?></a>
 				</li>
 				<?php } ?>

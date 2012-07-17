@@ -28,6 +28,8 @@ class indexController extends ActionController {
 		
 		// Gestion de la date à afficher
 		$day = Session::param ('date', time ());
+		// on s'assure d'avoir la date du début de la journée
+		$day = strtotime (date ('Y-m-d', $day));
 		$this->view->day = $day;
 		
 		$this->view->contextsCheck = Session::param ('contexts', array ());
@@ -82,6 +84,8 @@ class indexController extends ActionController {
 		$reminders = $taskArchiveDAO->listTasks ('reminder');
 		$actions = $taskArchiveDAO->listTasks ('action');
 		$this->view->tasksArchive = array_merge ($events, $reminders, $actions);
+		
+		$this->view->today = strtotime (date ('Y-m-d', time ()));
 	}
 	
 	public function configurationAction () {
