@@ -35,17 +35,19 @@ class indexController extends ActionController {
 		// Gestion des tâches à afficher
 		$this->view->tasks = array ();
 		foreach ($tasks as $task) {
-			if ($task->type () == 'action') {
-				if ($this->checkArray (
-					$task->context (),
-					$this->view->contextsCheck
-				)) {
+			if ($task->date (true) == 0
+			|| ($day <= $task->date (true)
+			 && $day + 86400 > $task->date (true))) {
+				$contexts = $task->context ();
+				if (empty ($contexts)) {
 					$this->view->tasks[] = $task;
-				}
-			} else {
-				if ($day <= $task->date (true)
-				 && $task->date (true) < $day + 86400) {
-					$this->view->tasks[] = $task;
+				} else {
+					if ($this->checkArray (
+						$contexts,
+						$this->view->contextsCheck
+					)) {
+						$this->view->tasks[] = $task;
+					}
 				}
 			}
 		}
