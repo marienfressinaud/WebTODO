@@ -133,14 +133,6 @@ return array (
 			),
 			'notesTask' => 'avec Christian',
 		),
-		9 => array (
-			'libelleTask' => 'Vérifier date contrat',
-			'dateTask' => 0,
-			'contextTask' => array (
-				0 => 0,
-			),
-			'notesTask' => '',
-		),
 		10 => array (
 			'libelleTask' => 'Faire dons',
 			'dateTask' => 1342389600,

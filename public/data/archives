@@ -7,5 +7,13 @@ return array (
 	'reminder' => array (
 	),
 	'action' => array (
+		0 => array (
+			'libelleTask' => 'Vérifier date contrat',
+			'dateTask' => '01/01/1970',
+			'contextTask' => array (
+				0 => 0,
+			),
+			'notesTask' => '',
+		),
 	),
 );
