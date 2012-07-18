@@ -1,2 +1,4 @@
 log/application.log
 app/configuration/application.ini
+public/data/archives
+public/data/tasks

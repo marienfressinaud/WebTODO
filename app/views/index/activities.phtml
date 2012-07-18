@@ -41,12 +41,15 @@
 				<label for="reference">Référence</label>
 				<span class="info" id="reference"><?php echo $this->task->type (); ?></span>
 				
+				<?php $contexts = $this->task->context (true); ?>
+				<?php if (!empty ($contexts)) { ?>
 				<label for="context">Contexte</label>
 				<span  class="info" id="context">
-					<?php foreach ($this->task->context (true) as $context) { ?>
+					<?php foreach ($contexts as $context) { ?>
 					<?php echo $context; ?><br />
 					<?php } ?>
 				</span>
+				<?php } ?>
 				
 				<?php $notes = $this->task->notes (); ?>
 				<?php if (!empty ($notes)) { ?>
