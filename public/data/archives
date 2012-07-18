@@ -3,8 +3,38 @@ return array (
 	'inbox' => array (
 	),
 	'event' => array (
+		0 => array (
+			'libelleTask' => 'Bla bla',
+			'dateTask' => '19/07/2012',
+			'contextTask' => array (
+			),
+			'notesTask' => '',
+		),
+		1 => array (
+			'libelleTask' => 'kikoo',
+			'dateTask' => '19/07/2012',
+			'contextTask' => array (
+				0 => 0,
+			),
+			'notesTask' => '',
+		),
+		2 => array (
+			'libelleTask' => 'kikoo',
+			'dateTask' => '19/07/2012',
+			'contextTask' => array (
+			),
+			'notesTask' => '',
+		),
 	),
 	'reminder' => array (
+		0 => array (
+			'libelleTask' => 'lol',
+			'dateTask' => '19/07/2012',
+			'contextTask' => array (
+				0 => 1,
+			),
+			'notesTask' => '',
+		),
 	),
 	'action' => array (
 		0 => array (
@@ -19,6 +49,53 @@ return array (
 			'libelleTask' => '',
 			'dateTask' => '01/01/1970',
 			'contextTask' => array (
+			),
+			'notesTask' => '',
+		),
+		2 => array (
+			'libelleTask' => 'Bla',
+			'dateTask' => '01/01/1970',
+			'contextTask' => array (
+				0 => 0,
+				1 => 4,
+			),
+			'notesTask' => '',
+		),
+		3 => array (
+			'libelleTask' => 'bla bla',
+			'dateTask' => '01/01/1970',
+			'contextTask' => array (
+				0 => 3,
+			),
+			'notesTask' => '',
+		),
+		4 => array (
+			'libelleTask' => 'hum',
+			'dateTask' => '01/01/1970',
+			'contextTask' => array (
+				0 => 2,
+			),
+			'notesTask' => '',
+		),
+		5 => array (
+			'libelleTask' => 'test',
+			'dateTask' => '01/01/1970',
+			'contextTask' => array (
+				0 => 2,
+				1 => 3,
+				2 => 4,
+			),
+			'notesTask' => '',
+		),
+		6 => array (
+			'libelleTask' => 'lolilol',
+			'dateTask' => '01/01/1970',
+			'contextTask' => array (
+				0 => 0,
+				1 => 1,
+				2 => 2,
+				3 => 3,
+				4 => 4,
 			),
 			'notesTask' => '',
 		),

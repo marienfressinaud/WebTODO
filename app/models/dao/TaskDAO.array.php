@@ -19,7 +19,7 @@ class TaskDAO extends Model_array {
 	}
 	
 	public function addTask ($values, $type) {
-		$id = count ($this->array[$type]);
+		$id = $this->generateKey ($type);
 		$this->array[$type][$id] = array ();
 		
 		foreach ($values as $key => $value) {
@@ -55,5 +55,15 @@ class TaskDAO extends Model_array {
 	public function searchTask ($id, $type) {
 		$tasks = HelperTask::daoToTask ($this->array[$type], $type);
 		return $tasks[$id];
+	}
+	
+	private function generateKey ($type) {
+		for ($i = 0; $i <= count ($this->array[$type]); $i++) {
+			if (!isset ($this->array[$type][$i])) {
+				return $i;
+			}
+		}
+		
+		return time ();
 	}
 }

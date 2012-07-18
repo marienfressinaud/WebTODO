@@ -29,13 +29,6 @@ return array (
 			),
 			'notesTask' => '',
 		),
-		3 => array (
-			'libelleTask' => 'Bla bla',
-			'dateTask' => 1342712654,
-			'contextTask' => array (
-			),
-			'notesTask' => '',
-		),
 	),
 	'reminder' => array (
 		0 => array (
@@ -148,15 +141,6 @@ return array (
 				1 => 4,
 			),
 			'notesTask' => 'Dons de juin et juillet',
-		),
-		11 => array (
-			'libelleTask' => 'Bla',
-			'dateTask' => 0,
-			'contextTask' => array (
-				0 => 0,
-				1 => 4,
-			),
-			'notesTask' => '',
 		),
 		12 => array (
 			'libelleTask' => 'appeler maman',
