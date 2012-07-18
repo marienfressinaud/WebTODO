@@ -8,7 +8,7 @@ class taskController extends ActionController {
 	public function addAction () {
 		$task = Request::param ('task');
 		
-		if ($task !== false) {
+		if ($task !== false && !empty ($task)) {
 			$task = htmlspecialchars ($task);
 			$taskDAO = new TaskDAO ();
 			
