@@ -15,5 +15,12 @@ return array (
 			),
 			'notesTask' => '',
 		),
+		1 => array (
+			'libelleTask' => '',
+			'dateTask' => '01/01/1970',
+			'contextTask' => array (
+			),
+			'notesTask' => '',
+		),
 	),
 );

@@ -19,11 +19,11 @@ class TaskDAO extends Model_array {
 	}
 	
 	public function addTask ($values, $type) {
-		$this->array[$type][] = array ();
+		$id = count ($this->array[$type]);
+		$this->array[$type][$id] = array ();
 		
-		$keyTask = count ($this->array[$type]) - 1;
 		foreach ($values as $key => $value) {
-			$this->array[$type][$keyTask][$key] = $value;
+			$this->array[$type][$id][$key] = $value;
 		}
 		
 		$this->writeFile($this->array);

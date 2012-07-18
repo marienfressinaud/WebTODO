@@ -29,6 +29,13 @@ return array (
 			),
 			'notesTask' => '',
 		),
+		3 => array (
+			'libelleTask' => 'Bla bla',
+			'dateTask' => 1342712654,
+			'contextTask' => array (
+			),
+			'notesTask' => '',
+		),
 	),
 	'reminder' => array (
 		0 => array (
@@ -143,13 +150,11 @@ return array (
 			'notesTask' => 'Dons de juin et juillet',
 		),
 		11 => array (
-			'libelleTask' => 'Acheter Let Them Talk de Hugh Laurie',
-			'dateTask' => 1342389600,
+			'libelleTask' => 'Bla',
+			'dateTask' => 0,
 			'contextTask' => array (
 				0 => 0,
-				1 => 1,
-				2 => 3,
-				3 => 4,
+				1 => 4,
 			),
 			'notesTask' => '',
 		),
