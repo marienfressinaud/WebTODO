@@ -6,8 +6,11 @@ class indexController extends ActionController {
 		$contextDAO = new ContextDAO ();
 		
 		$events = $taskDAO->listTasks ('event');
+		usort ($events, 'sortTasksByDate');
 		$reminders = $taskDAO->listTasks ('reminder');
+		usort ($reminders, 'sortTasksByDate');
 		$actions = $taskDAO->listTasks ('action');
+		usort ($actions, 'sortTasksByDate');
 		
 		$tasks = array_merge ($events, $reminders, $actions);
 		$this->view->contexts = $contextDAO->listContexts ();
@@ -76,13 +79,19 @@ class indexController extends ActionController {
 		$contextDAO = new ContextDAO ();
 		
 		$events = $taskDAO->listTasks ('event');
+		usort ($events, 'sortTasksByDate');
 		$reminders = $taskDAO->listTasks ('reminder');
+		usort ($reminders, 'sortTasksByDate');
 		$actions = $taskDAO->listTasks ('action');
+		usort ($actions, 'sortTasksByDate');
 		$this->view->tasks = array_merge ($events, $reminders, $actions);
 		
 		$events = $taskArchiveDAO->listTasks ('event');
+		usort ($events, 'sortTasksByDate');
 		$reminders = $taskArchiveDAO->listTasks ('reminder');
+		usort ($reminders, 'sortTasksByDate');
 		$actions = $taskArchiveDAO->listTasks ('action');
+		usort ($actions, 'sortTasksByDate');
 		$this->view->tasksArchive = array_merge ($events, $reminders, $actions);
 		
 		$this->view->today = strtotime (date ('Y-m-d', time ()));
@@ -102,5 +111,18 @@ class indexController extends ActionController {
 		}
 		
 		return false;
+	}
+}
+
+function sortTasksByDate ($task1, $task2) {
+	$date1 = $task1->date (true);
+	$date2 = $task2->date (true);
+	
+	if ($date1 == 0) {
+		return 1;
+	} elseif ($date2 == 0) {
+		return -1;
+	} else {
+		return $task1->date (true) - $task2->date (true);
 	}
 }
