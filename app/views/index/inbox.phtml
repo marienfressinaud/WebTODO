@@ -2,12 +2,9 @@
 	<?php if (!empty ($this->tasks)) { ?>
 	<div id="listTasks">
 		<ul>
-			<?php 
-				$tasks = array_reverse ($this->tasks);
-				$first = true;
-			?>
+			<?php $tasks = array_reverse ($this->tasks); ?>
 			<?php foreach ($tasks as $task) { ?>
-			<li <?php if ($first) { $first = false; echo 'class="disable"'; } ?>>
+			<li class="disable">
 				<span><?php echo $task->libelle (); ?></span>
 			</li>
 			<?php } ?>

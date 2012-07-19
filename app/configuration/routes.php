@@ -56,4 +56,12 @@ return array (
 		'action'     => 'archive',
 		'params'     => array ('type', 'id')
 	),
+	
+	/////
+	array (
+		'route'      => '/supprimer_(\w+)-archive_(\d+)',
+		'controller' => 'archive',
+		'action'     => 'delete',
+		'params'     => array ('type', 'id')
+	),
 );

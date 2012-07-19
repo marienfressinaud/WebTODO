@@ -1,8 +1,9 @@
 <div id="panel">
-	<?php if (!empty ($this->tasks)) { ?>
+	<?php if (!empty ($this->tasks) || !empty ($this->tasksArchive)) { ?>
 	<div id="listTasks">
 		<div class="line">
 			<div class="cell">
+			<?php if (!empty ($this->tasks)) { ?>
 			<h2>Activités</h2>
 			<ul>
 				<?php foreach ($this->tasks as $task) { ?>
@@ -14,31 +15,37 @@
 					}
 				?>
 				<li class="<?php echo $class; ?>">
-					<a href="<?php echo Url::display (array ('c' => 'task', 'a' => 'see', 'params' => array ('id' => $task->id (), 'type' => $task->type (), 'session' => true))); ?>"><?php echo $task->libelle (); ?></a>
+					<a href="<?php echo Url::display (array ('c' => 'task', 'a' => 'see', 'params' => array ('id' => $task->id (), 'type' => $task->type (), 'session' => true))); ?>">
+						<?php if ($task->date (true) > 0) { ?>
+						<span class="date">(<?php echo $task->date (); ?>)</span>
+						<?php } ?>
+						<?php echo $task->libelle (); ?>
+					</a>
 				</li>
 				<?php } ?>
 			</ul>
+			<?php } ?>
 			
 			<?php if (!empty ($this->tasksArchive)) { ?>
 			<h2>Archives</h2>
 			<ul>
 				<?php foreach ($this->tasksArchive as $task) { ?>
 				<li class="<?php echo $task->type (); ?> disable">
-					<span><?php echo $task->libelle (); ?></span>
+					<span><?php echo $task->libelle (); ?> <a class="delete" href="<?php echo Url::display (array ('c' => 'archive', 'a' => 'delete', 'params' => array ('id' => $task->id (), 'type' => $task->type ()))); ?>">&nbsp;</a></span>
 				</li>
 				<?php } ?>
 			</ul>
+			<?php } ?>
 			
 			<script type="text/javascript">
+			<?php if (!empty ($this->tasks) && !empty ($this->tasksArchive)) { ?>
 			height = ($('body').height () - 100) / 2;
-			$('#listTasks .line .cell ul').height (height);
-			</script>
 			<?php } else { ?>
-			<script type="text/javascript">
 			height = ($('body').height () - 50);
+			<?php } ?>
+			
 			$('#listTasks .line .cell ul').height (height);
 			</script>
-			<?php } ?>
 			</div>
 		</div>
 	</div>

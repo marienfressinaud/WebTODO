@@ -9,29 +9,29 @@ html, body {
 ul {
 	list-style: none;
 	}
-	ul li * {
+	ul li > * {
 		display: inline-block; min-height: 20px; width: 90%; padding: 15px 5%;
 		color: #000; text-decoration: none; line-height: 20px; vertical-align: top; word-wrap: break-word;
 		}
-	ul li.event * {
+	ul li.event > * {
 		background: url("img/event.png") no-repeat 10px center;
 		}
-	ul li.reminder * {
+	ul li.reminder > * {
 		background: url("img/reminder.png") no-repeat 10px center;
 		}
-	ul li.delay * {
+	ul li.delay > * {
 		background-color: #fdd;
 		}
-	ul li.active * {
+	ul li.active > * {
 		background-color: #4499dd !important; color: #fff;
 		}
-	ul li.disable * {
+	ul li.disable > * {
 		background-color: #eee !important; color: #666; opacity: 0.5;
 		}
-	ul li:hover * {
+	ul li:hover > * {
 		background-color: #ddd;
 		}
-		ul li.delay:hover * {
+		ul li.delay:hover > * {
 			background-color: #ecc;
 			}
 
@@ -92,8 +92,8 @@ form {
 				background: url("img/backSubmit.png") repeat-x center; color: #000;
 				}
 		form .info {
-			padding: 12px 0 0 10px;
-			text-align: left; line-height: 30px;
+			padding: 4px 0 0 10px;
+			text-align: left; line-height: 42px;
 			}
 	:-moz-placeholder {
 		color: #aaa; font-style: italic;
@@ -164,3 +164,11 @@ form {
 				display: table-cell; width: 20%;
 				border-right: 1px solid #999;
 				}
+
+span.date {
+	color: #999; font-size: 80%;
+	}
+span a.delete {
+	display: inline-block; width: 20px; float: right;
+	background: url("img/delete.png") center center no-repeat; text-decoration: none;
+	}
