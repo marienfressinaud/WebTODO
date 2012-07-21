@@ -6,13 +6,11 @@ class indexController extends ActionController {
 		$contextDAO = new ContextDAO ();
 		
 		$events = $taskDAO->listTasks ('event');
-		usort ($events, 'sortTasksByDate');
 		$reminders = $taskDAO->listTasks ('reminder');
-		usort ($reminders, 'sortTasksByDate');
 		$actions = $taskDAO->listTasks ('action');
-		usort ($actions, 'sortTasksByDate');
 		
 		$tasks = array_merge ($events, $reminders, $actions);
+		usort ($tasks, 'sortTasksByDate');
 		$this->view->contexts = $contextDAO->listContexts ();
 		
 		// Gestion du changement des options
@@ -79,20 +77,18 @@ class indexController extends ActionController {
 		$contextDAO = new ContextDAO ();
 		
 		$events = $taskDAO->listTasks ('event');
-		usort ($events, 'sortTasksByDate');
 		$reminders = $taskDAO->listTasks ('reminder');
-		usort ($reminders, 'sortTasksByDate');
 		$actions = $taskDAO->listTasks ('action');
-		usort ($actions, 'sortTasksByDate');
+		
 		$this->view->tasks = array_merge ($events, $reminders, $actions);
+		usort ($this->view->tasks, 'sortTasksByDate');
 		
 		$events = $taskArchiveDAO->listTasks ('event');
-		usort ($events, 'sortTasksByDate');
 		$reminders = $taskArchiveDAO->listTasks ('reminder');
-		usort ($reminders, 'sortTasksByDate');
 		$actions = $taskArchiveDAO->listTasks ('action');
-		usort ($actions, 'sortTasksByDate');
+		
 		$this->view->tasksArchive = array_merge ($events, $reminders, $actions);
+		usort ($this->view->tasksArchive, 'sortTasksByDate');
 		
 		$this->view->today = strtotime (date ('Y-m-d', time ()));
 	}
