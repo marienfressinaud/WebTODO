@@ -82,14 +82,14 @@ form {
 				display: block; width: 100%; min-height: 25px; margin: 0; padding: 2px 5px;
 				background: #fff;
 				}
-		form a.button {
+		a.button {
 			min-height: 44px;
 			font-weight: bold; box-shadow: 1px 1px 2px #cfcfcf; text-align: center; text-decoration: none; border-radius: 3px; border: 1px solid #aaa; line-height: 44px;
 			}
-			form a.button.delete {
+			a.button.delete {
 				background: url("img/backDelete.png") repeat-x center; color: #fff;
 				}
-			form a.button.submit {
+			a.button.submit {
 				background: url("img/backSubmit.png") repeat-x center; color: #000;
 				}
 		form .info {
