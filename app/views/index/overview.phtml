@@ -15,7 +15,7 @@
 					}
 				?>
 				<li class="<?php echo $class; ?>">
-					<a href="<?php echo Url::display (array ('c' => 'task', 'a' => 'see', 'params' => array ('id' => $task->id (), 'type' => $task->type (), 'session' => true))); ?>">
+					<a href="<?php echo Url::display (array ('c' => 'task', 'a' => 'change', 'params' => array ('id' => $task->id (), 'type' => $task->type (), 'session' => true))); ?>">
 						<?php if ($task->date (true) > 0) { ?>
 						<span class="date">(<?php echo $task->date (); ?>)</span>
 						<?php } ?>
@@ -31,7 +31,13 @@
 			<ul>
 				<?php foreach ($this->tasksArchive as $task) { ?>
 				<li class="<?php echo $task->type (); ?> disable">
-					<span><?php echo $task->libelle (); ?> <a class="delete" href="<?php echo Url::display (array ('c' => 'archive', 'a' => 'delete', 'params' => array ('id' => $task->id (), 'type' => $task->type ()))); ?>">&nbsp;</a></span>
+					<span>
+						<?php if ($task->dateFin (true) > 0) { ?>
+						<span class="date">(fini le <?php echo $task->dateFin (); ?>)</span>
+						<?php } ?>
+						<?php echo $task->libelle (); ?>
+						<a class="delete" href="<?php echo Url::display (array ('c' => 'archive', 'a' => 'delete', 'params' => array ('id' => $task->id (), 'type' => $task->type ()))); ?>">&nbsp;</a>
+					</span>
 				</li>
 				<?php } ?>
 			</ul>

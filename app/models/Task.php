@@ -8,6 +8,7 @@ class Task extends Model {
 	private $type;
 	private $libelle;
 	private $date;
+	private $dateFin;
 	private $context;
 	private $notes;
 	
@@ -32,6 +33,13 @@ class Task extends Model {
 			return $this->date;
 		} else {
 			return date ('d/m/Y', $this->date);
+		}
+	}
+	public function dateFin ($raw = false) {
+		if ($raw) {
+			return $this->dateFin;
+		} else {
+			return date ('d/m/Y', $this->dateFin);
 		}
 	}
 	public function context ($echo_libelle = false) {
@@ -62,6 +70,9 @@ class Task extends Model {
 	}
 	public function _date ($date) {
 		$this->date = $date;
+	}
+	public function _dateFin ($date) {
+		$this->dateFin = $date;
 	}
 	public function _context ($context) {
 		if (!is_array ($context)) {

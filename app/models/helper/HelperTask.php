@@ -16,6 +16,7 @@ class HelperTask {
 			$liste[$key]->_type ($type);
 			$liste[$key]->_libelle ($dao['libelleTask']);
 			$liste[$key]->_date ($dao['dateTask']);
+			$liste[$key]->_dateFin ($dao['dateFinTask']);
 			$liste[$key]->_context ($dao['contextTask']);
 			$liste[$key]->_notes ($dao['notesTask']);
 		}
@@ -27,6 +28,7 @@ class HelperTask {
 		$dao_ok = array (
 			'libelleTask' => '',
 			'dateTask'    => 0,
+			'dateFinTask' => 0,
 			'contextTask' => array (),
 			'notesTask'   => ''
 		);

@@ -1,5 +1,5 @@
 <div id="panel">
-	<div id="choosePanel">
+	<div id="optionPanel">
 		<h2>Options</h2>
 		<form method="post" action="">
 			<input type="date" name="date" id="date" placeholder="Annee-Mois-Jour" value="<?php echo date ('Y-m-d', $this->day); ?>" />
@@ -22,7 +22,7 @@
 			<ul>
 				<?php foreach ($this->tasks as $task) { ?>
 				<li class="<?php echo $task->type (); ?><?php if ($task == $this->task) { echo ' active'; } ?>">
-					<a href="<?php echo Url::display (array ('c' => 'task', 'a' => 'see', 'params' => array ('id' => $task->id (), 'type' => $task->type (), 'session' => false))); ?>"><?php echo $task->libelle (); ?></a>
+					<a href="<?php echo Url::display (array ('c' => 'task', 'a' => 'change', 'params' => array ('id' => $task->id (), 'type' => $task->type (), 'session' => false))); ?>"><?php echo $task->libelle (); ?></a>
 				</li>
 				<?php } ?>
 			</ul>
@@ -58,7 +58,7 @@
 				<?php } ?>
 			</form>
 			
-			<a class="button" href="<?php echo Url::display (array ('c' => 'task', 'a' => 'archive', 'params' => array ('id' => $this->task->id (), 'type' => $this->task->type ()))); ?>">Marquée comme terminée</a>
+			<a class="button" href="<?php echo Url::display (array ('c' => 'archive', 'a' => 'archive', 'params' => array ('id' => $this->task->id (), 'type' => $this->task->type ()))); ?>">Marquée comme terminée</a>
 			</div>
 		</div>
 		

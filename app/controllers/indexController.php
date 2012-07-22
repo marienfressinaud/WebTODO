@@ -74,7 +74,6 @@ class indexController extends ActionController {
 	public function overviewAction () {
 		$taskDAO = new TaskDAO ();
 		$taskArchiveDAO = new TaskDAO ('archives');
-		$contextDAO = new ContextDAO ();
 		
 		$events = $taskDAO->listTasks ('event');
 		$reminders = $taskDAO->listTasks ('reminder');
@@ -87,14 +86,28 @@ class indexController extends ActionController {
 		$reminders = $taskArchiveDAO->listTasks ('reminder');
 		$actions = $taskArchiveDAO->listTasks ('action');
 		
-		$this->view->tasksArchive = array_merge ($events, $reminders, $actions);
-		usort ($this->view->tasksArchive, 'sortTasksByDate');
+		$archives = array_merge ($events, $reminders, $actions);
+		usort ($archives, 'sortArchivesByDate');
+		$this->view->tasksArchive = $archives;
 		
 		$this->view->today = strtotime (date ('Y-m-d', time ()));
 	}
 	
 	public function configurationAction () {
+		$contextDAO = new ContextDAO ();
 		
+		if (Request::isPost ()) {
+			$contexts = Request::param ('contexts', array ());
+			$newContext = Request::param ('newContext');
+			
+			if (strlen ($newContext) > 0) {
+				$contexts[] = $newContext;
+			}
+			
+			$contextDAO->updateContexts ($contexts);
+		}
+		
+		$this->view->contexts = $contextDAO->listContexts ();
 	}
 	
 	
@@ -119,6 +132,19 @@ function sortTasksByDate ($task1, $task2) {
 	} elseif ($date2 == 0) {
 		return -1;
 	} else {
-		return $task1->date (true) - $task2->date (true);
+		return $date1 - $date2;
+	}
+}
+
+function sortArchivesByDate ($task1, $task2) {
+	$date1 = $task1->dateFin (true);
+	$date2 = $task2->dateFin (true);
+	
+	if ($date1 == 0) {
+		return 1;
+	} elseif ($date2 == 0) {
+		return -1;
+	} else {
+		return $date1 - $date2;
 	}
 }

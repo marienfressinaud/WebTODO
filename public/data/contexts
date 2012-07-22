@@ -1,18 +1,18 @@
 <?php
 return array (
 	0 => array (
-		'libelleContext' => 'À la maison',
+		'libelleContext' => 'Maison',
 	),
 	1 => array (
-		'libelleContext' => 'Au boulot',
+		'libelleContext' => 'Boulot',
 	),
 	2 => array (
-		'libelleContext' => 'Au téléphone',
+		'libelleContext' => 'Téléphone',
 	),
 	3 => array (
 		'libelleContext' => 'Courses',
 	),
 	4 => array (
-		'libelleContext' => 'Sur l\'ordinateur',
+		'libelleContext' => 'Ordinateur',
 	),
 );

@@ -161,15 +161,26 @@ form {
 				#manageTask h2, #detailTask h2 {
 					background: #4499dd;
 					}
-			#choosePanel {
+			#optionPanel {
 				display: table-cell; width: 20%;
 				border-right: 1px solid #999;
+				}
+			#options {
+				display: table-cell; width: 51%;
+				background: #f9f9f9; border-right: 1px solid #999;
+				}
+			#configuration {
+				display: table-cell; width: 50%;
+				background: #fff;
 				}
 
 span.date {
 	color: #999; font-size: 80%;
 	}
-span a.delete {
-	display: inline-block; width: 20px; float: right;
+a.delete {
+	display: inline-block; width: 20px;
 	background: url("img/delete.png") center center no-repeat; text-decoration: none;
 	}
+	span a.delete {
+		float: right;
+		}

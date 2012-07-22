@@ -47,17 +47,25 @@ return array (
 	array (
 		'route'      => '/change_(\w+)-tache_(\d+)-(\d?)',
 		'controller' => 'task',
-		'action'     => 'see',
+		'action'     => 'change',
 		'params'     => array ('type', 'id', 'session')
-	),
-	array (
-		'route'      => '/archive_(\w+)-tache_(\d+)',
-		'controller' => 'task',
-		'action'     => 'archive',
-		'params'     => array ('type', 'id')
 	),
 	
 	/////
+	array (
+		'route'      => '/supprimer_contexte_(\d+)',
+		'controller' => 'context',
+		'action'     => 'delete',
+		'params'     => array ('id')
+	),
+	
+	/////
+	array (
+		'route'      => '/archive_(\w+)-tache_(\d+)',
+		'controller' => 'archive',
+		'action'     => 'archive',
+		'params'     => array ('type', 'id')
+	),
 	array (
 		'route'      => '/supprimer_(\w+)-archive_(\d+)',
 		'controller' => 'archive',

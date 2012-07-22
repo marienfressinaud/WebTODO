@@ -73,7 +73,7 @@ class taskController extends ActionController {
 		Request::forward (array ('a' => 'inbox'), true);
 	}
 	
-	public function seeAction () {
+	public function changeAction () {
 		$taskDAO = new TaskDAO ();
 		
 		$id = Request::param ('id');
@@ -100,27 +100,6 @@ class taskController extends ActionController {
 				Session::_param ('contexts', $task->context ());
 			}
 		}
-		
-		Request::forward (array ('a' => 'activities'), true);
-	}
-	
-	public function archiveAction () {
-		$taskArchiveDAO = new TaskDAO ('archives');
-		$taskDAO = new TaskDAO ();
-		
-		$id = Request::param ('id');
-		$type = Request::param ('type');
-		
-		$task = $taskDAO->searchTask ($id, $type);
-		
-		$values = array (
-			'libelleTask' => $task->libelle (),
-			'dateTask'    => $task->date (),
-			'contextTask' => $task->context (),
-			'notesTask'   => $task->notes ()
-		);
-		$taskArchiveDAO->addTask ($values, $type);
-		$taskDAO->deleteTask ($id, $type);
 		
 		Request::forward (array ('a' => 'activities'), true);
 	}

@@ -1,3 +1,26 @@
 <div id="panel">
-	<div class="nothing">Les paramétrages ne sont pas encore disponibles.</div>
+	<div id="options">
+		<ul>
+			<li class="active"><a href="">Gestion des contextes</a></li>
+		</ul>
+	</div>
+
+	<div id="configuration">
+		<h2>Gérer les contextes</h2>
+		<form method="post" action="">
+			<?php foreach ($this->contexts as $context) { ?>
+			<label for="context_<?php echo $context->id (); ?>">
+				<a class="delete" href="<?php echo Url::display (array ('c' => 'context', 'a' => 'delete', 'params' => array ('id' => $context->id ())));?>">&nbsp;</a>
+				Contexte n°<?php echo $context->id () + 1; ?>
+			</label>
+			<input type="text" name="contexts[]" id="context_<?php echo $context->id (); ?>" value="<?php echo $context->libelle (); ?>" />
+			<?php } ?>
+			
+			<label for="newContext">Ajouter un contexte</label>
+			<input type="text" name="newContext" id="newContext" placeholder="Nouveau contexte" />
+			
+			<label> </label>
+			<input type="submit" value="Valider" />
+		</form>
+	</div>
 </div>

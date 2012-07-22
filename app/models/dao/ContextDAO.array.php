@@ -24,6 +24,15 @@ class ContextDAO extends Model_array {
 		$this->writeFile($this->array);
 	}
 	
+	public function updateContexts ($values) {
+		foreach ($values as $key => $value) {
+			$values[$key] = array ('libelleContext' => $value);
+		}
+		$this->array = $values;
+		
+		$this->writeFile($this->array);
+	}
+	
 	public function deleteContext ($id) {
 		unset ($this->array[$id]);
 		$this->writeFile($this->array);
