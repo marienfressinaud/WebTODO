@@ -82,14 +82,14 @@ form {
 				display: block; width: 100%; min-height: 25px; margin: 0; padding: 2px 5px;
 				background: #fff;
 				}
-		a.button {
+		form a.button {
 			min-height: 44px;
 			font-weight: bold; box-shadow: 1px 1px 2px #cfcfcf; text-align: center; text-decoration: none; border-radius: 3px; border: 1px solid #aaa; line-height: 44px;
 			}
-			a.button.delete {
+			form a.button.delete {
 				background: url("img/backDelete.png") repeat-x center; color: #fff;
 				}
-			a.button.submit {
+			form a.button.submit {
 				background: url("img/backSubmit.png") repeat-x center; color: #000;
 				}
 		form .info {
@@ -177,10 +177,7 @@ form {
 span.date {
 	color: #999; font-size: 80%;
 	}
-a.delete {
-	display: inline-block; width: 20px;
+span a.delete {
+	display: inline-block; width: 20px; float: right;
 	background: url("img/delete.png") center center no-repeat; text-decoration: none;
 	}
-	span a.delete {
-		float: right;
-		}

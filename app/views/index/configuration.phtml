@@ -10,7 +10,7 @@
 		<form method="post" action="">
 			<?php foreach ($this->contexts as $context) { ?>
 			<label for="context_<?php echo $context->id (); ?>">
-				<a class="delete" href="<?php echo Url::display (array ('c' => 'context', 'a' => 'delete', 'params' => array ('id' => $context->id ())));?>">&nbsp;</a>
+				<span><a class="delete" href="<?php echo Url::display (array ('c' => 'context', 'a' => 'delete', 'params' => array ('id' => $context->id ())));?>">&nbsp;</a></span>
 				Contexte n°<?php echo $context->id () + 1; ?>
 			</label>
 			<input type="text" name="contexts[]" id="context_<?php echo $context->id (); ?>" value="<?php echo $context->libelle (); ?>" />
