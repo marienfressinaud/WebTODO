@@ -20,7 +20,7 @@
 
 // Constantes de chemins
 define ('PUBLIC_PATH', realpath (dirname (__FILE__)));
-define ('LIB_PATH', realpath (PUBLIC_PATH . '/../../minz1.1/lib'));
+define ('LIB_PATH', realpath (PUBLIC_PATH . '/../lib/minz'));
 define ('APP_PATH', realpath (PUBLIC_PATH . '/../app'));
 define ('LOG_PATH', realpath (PUBLIC_PATH . '/../log'));
 define ('CACHE_PATH', realpath (PUBLIC_PATH . '/../cache'));
