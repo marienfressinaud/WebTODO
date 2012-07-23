@@ -145,6 +145,6 @@ function sortArchivesByDate ($task1, $task2) {
 	} elseif ($date2 == 0) {
 		return -1;
 	} else {
-		return $date1 - $date2;
+		return $date2 - $date1;
 	}
 }
