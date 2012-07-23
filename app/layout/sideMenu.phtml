@@ -1,14 +1,14 @@
 <ul>
 	<li <?php if (Request::actionName () == 'activities') { echo 'class="active"'; } ?>>
-		<a href="<?php echo Url::display (array ('a' => 'activities')); ?>">Activités en cours</a>
+		<a href="<?php echo Url::display (array ('a' => 'activities')); ?>"><?php echo Translate::t ('activities in progress'); ?></a>
 	</li>
 	<li <?php if (Request::actionName () == 'inbox') { echo 'class="active"'; } ?>>
-		<a href="<?php echo Url::display (array ('a' => 'inbox')); ?>">Ranger la boîte de réception</a>
+		<a href="<?php echo Url::display (array ('a' => 'inbox')); ?>"><?php echo Translate::t ('sort inbox'); ?></a>
 	</li>
 	<li <?php if (Request::actionName () == 'overview') { echo 'class="active"'; } ?>>
-		<a href="<?php echo Url::display (array ('a' => 'overview')); ?>">Vue d'ensemble</a>
+		<a href="<?php echo Url::display (array ('a' => 'overview')); ?>"><?php echo Translate::t ('overview'); ?></a>
 	</li>
 	<li <?php if (Request::actionName () == 'configuration') { echo 'class="active"'; } ?>>
-		<a href="<?php echo Url::display (array ('a' => 'configuration')); ?>">Paramétrer</a>
+		<a href="<?php echo Url::display (array ('a' => 'configuration')); ?>"><?php echo Translate::t ('configure'); ?></a>
 	</li>
 </ul>

@@ -1,8 +1,8 @@
 <div id="panel">
 	<div id="optionPanel">
-		<h2>Options</h2>
+		<h2><?php echo Translate::t ('options'); ?></h2>
 		<form method="post" action="">
-			<input type="date" name="date" id="date" placeholder="Annee-Mois-Jour" value="<?php echo date ('Y-m-d', $this->day); ?>" />
+			<input type="date" name="date" id="date" placeholder="<?php echo Translate::t ('year-month-day'); ?>" value="<?php echo date ('Y-m-d', $this->day); ?>" />
 			
 			<?php foreach ($this->contexts as $context) { ?>
 			<br />
@@ -10,7 +10,7 @@
 			<label for="check_<?php echo $context->id (); ?>" class="for_checkbox"><?php echo $context->libelle (); ?></label>
 			<?php } ?><br />
 			
-			<input type="submit" value="Actualiser" />
+			<input type="submit" value="<?php echo Translate::t ('refresh'); ?>" />
 		</form>
 	</div>
 	
@@ -18,7 +18,7 @@
 	<div id="listTasks">
 		<div class="line">
 			<div class="cell">
-			<h2>À faire le <?php echo date ('d/m/Y', $this->day); ?></h2>
+			<h2><?php echo Translate::t ('date to do'); ?> <?php echo date (Translate::t ('date format'), $this->day); ?></h2>
 			<ul>
 				<?php foreach ($this->tasks as $task) { ?>
 				<?php
@@ -45,16 +45,16 @@
 			<form method="post" action="<?php echo Url::display (array ('c' => 'task', 'a' => 'update', 'params' => array ('id' => $this->task->id (), 'type' => $this->task->type ()))); ?>">
 				<?php if (!Session::param ('update')) { ?>
 					<?php if ($this->task->date (true) > 0) { ?>
-					<label for="date">Date</label>
+					<label for="date"><?php echo Translate::t ('date'); ?></label>
 					<span class="info" id="date"><?php echo $this->task->date (); ?></span>
 					<?php } ?>
 				
-					<label for="reference">Référence</label>
+					<label for="reference"><?php echo Translate::t ('reference'); ?></label>
 					<span class="info" id="reference"><?php echo Translate::t ($this->task->type ()); ?></span>
 				
 					<?php $contexts = $this->task->context (true); ?>
 					<?php if (!empty ($contexts)) { ?>
-					<label for="context">Contexte</label>
+					<label for="context"><?php echo Translate::t ('context'); ?></label>
 					<span  class="info" id="context">
 						<?php foreach ($contexts as $context) { ?>
 						<?php echo $context; ?><br />
@@ -64,32 +64,32 @@
 				
 					<?php $notes = $this->task->notes (); ?>
 					<?php if (!empty ($notes)) { ?>
-					<label for="notes">Notes</label>
+					<label for="notes"><?php echo Translate::t ('notes'); ?></label>
 					<span class="info" id="notes"><?php echo $notes; ?></span>
 					<?php } ?>
 				<?php } else { ?>
-					<label for="libelle">Libellé</label>
+					<label for="libelle"><?php echo Translate::t ('label'); ?></label>
 					<input type="text" name="libelle" id="libelle" value="<?php echo $this->task->libelle (); ?>" />
 					
-					<label for="date">Date</label>
-					<input type="date" name="date" id="date" placeholder="Annee-Mois-Jour" <?php if ($this->task->date (true) > 0) { echo 'value="' . date ('Y-m-d', $this->task->date (true)) . '"'; } ?>/>
+					<label for="date"><?php echo Translate::t ('date'); ?></label>
+					<input type="date" name="date" id="date" placeholder="<?php echo Translate::t ('year-month-day'); ?>" <?php if ($this->task->date (true) > 0) { echo 'value="' . date ('Y-m-d', $this->task->date (true)) . '"'; } ?>/>
 			
-					<label for="reference">Référencer</label>
+					<label for="reference"><?php echo Translate::t ('reference'); ?></label>
 					<select name="reference" id="reference">
-						<option value="event" <?php if ($this->task->type () == 'event') { echo 'selected="selected"'; } ?>>Évènement</option>
-						<option value="reminder" <?php if ($this->task->type () == 'reminder') { echo 'selected="selected"'; } ?>>Rappel</option>
-						<option value="action" <?php if ($this->task->type () == 'action') { echo 'selected="selected"'; } ?>>Action</option>
+						<option value="event" <?php if ($this->task->type () == 'event') { echo 'selected="selected"'; } ?>><?php echo Translate::t ('event'); ?></option>
+						<option value="reminder" <?php if ($this->task->type () == 'reminder') { echo 'selected="selected"'; } ?>><?php echo Translate::t ('reminder'); ?></option>
+						<option value="action" <?php if ($this->task->type () == 'action') { echo 'selected="selected"'; } ?>><?php echo Translate::t ('action'); ?></option>
 					</select>
 			
-					<label for="context">Contexte</label>
+					<label for="context"><?php echo Translate::t ('context'); ?></label>
 					<select class="multi" name="context[]" id="context" multiple="multiple">
 						<?php foreach ($this->contexts as $context) { ?>
 						<option value="<?php echo $context->id (); ?>" <?php if (in_array ($context->id (), $this->task->context ())) { echo 'selected="selected"'; } ?>><?php echo $context->libelle (); ?></option>
 						<?php } ?>
 					</select>
 			
-					<label for="notes">Notes</label>
-					<textarea name="notes" id="notes" placeholder="Ajouter des notes"><?php echo $this->task->notes (); ?></textarea>
+					<label for="notes"><?php echo Translate::t ('notes'); ?></label>
+					<textarea name="notes" id="notes" placeholder="<?php echo Translate::t ('add notes'); ?>"><?php echo $this->task->notes (); ?></textarea>
 			
 					<input type="hidden" name="id" value="<?php echo $this->task->id (); ?>" />
 					<input type="hidden" name="type" value="<?php echo $this->task->type (); ?>" />
@@ -98,8 +98,8 @@
 			</form>
 			
 			<?php if (!Session::param ('update')) { ?>
-			<a class="button update" href="<?php echo Url::display (array ('c' => 'task', 'a' => 'update', 'params' => array ('id' => $this->task->id (), 'type' => $this->task->type ()))); ?>">Éditer</a><!--
-			--><a class="button" href="<?php echo Url::display (array ('c' => 'archive', 'a' => 'archive', 'params' => array ('id' => $this->task->id (), 'type' => $this->task->type ()))); ?>">Marquée comme terminée</a>
+			<a class="button update" href="<?php echo Url::display (array ('c' => 'task', 'a' => 'update', 'params' => array ('id' => $this->task->id (), 'type' => $this->task->type ()))); ?>"><?php echo Translate::t ('edit'); ?></a><!--
+			--><a class="button" href="<?php echo Url::display (array ('c' => 'archive', 'a' => 'archive', 'params' => array ('id' => $this->task->id (), 'type' => $this->task->type ()))); ?>"><?php echo Translate::t ('finish'); ?></a>
 			<?php } ?>
 			</div>
 		</div>
@@ -121,6 +121,6 @@
 		<?php } ?>
 	</div>
 	<?php } else { ?>
-	<div class="nothing">Vous n'avez rien à faire.</div>
+	<div class="nothing"><?php echo Translate::t ('nothing to do'); ?></div>
 	<?php } ?>
 </div>

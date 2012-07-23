@@ -32,14 +32,14 @@ class Task extends Model {
 		if ($raw) {
 			return $this->date;
 		} else {
-			return date ('d/m/Y', $this->date);
+			return date (Translate::t ('date format'), $this->date);
 		}
 	}
 	public function dateFin ($raw = false) {
 		if ($raw) {
 			return $this->dateFin;
 		} else {
-			return date ('d/m/Y', $this->dateFin);
+			return date (Translate::t ('date format'), $this->dateFin);
 		}
 	}
 	public function context ($echo_libelle = false) {

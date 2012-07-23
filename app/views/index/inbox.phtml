@@ -15,33 +15,33 @@
 	<div id="manageTask">
 		<h2><?php echo $task->libelle (); ?></h2>
 		<form method="post" action="<?php echo Url::display (array ('c' => 'task', 'a' => 'validate')); ?>">
-			<label for="date">Date</label>
-			<input type="date" name="date" id="date" placeholder="Annee-Mois-Jour" />
+			<label for="date"><?php echo Translate::t ('date'); ?></label>
+			<input type="date" name="date" id="date" placeholder="<?php echo Translate::t ('year-month-day'); ?>" />
 			
-			<label for="reference">Référencer</label>
+			<label for="reference"><?php echo Translate::t ('reference'); ?></label>
 			<select name="reference" id="reference">
-				<option value="event">Évènement</option>
-				<option value="reminder">Rappel</option>
-				<option value="action">Action</option>
+				<option value="event"><?php echo Translate::t ('event'); ?></option>
+				<option value="reminder"><?php echo Translate::t ('reminder'); ?></option>
+				<option value="action"><?php echo Translate::t ('action'); ?></option>
 			</select>
 			
-			<label for="context">Contexte</label>
+			<label for="context"><?php echo Translate::t ('context'); ?></label>
 			<select class="multi" name="context[]" id="context" multiple="multiple">
 				<?php foreach ($this->contexts as $context) { ?>
 				<option value="<?php echo $context->id (); ?>"><?php echo $context->libelle (); ?></option>
 				<?php } ?>
 			</select>
 			
-			<label for="notes">Notes</label>
-			<textarea name="notes" id="notes" placeholder="Ajouter des notes"></textarea>
+			<label for="notes"><?php echo Translate::t ('notes'); ?></label>
+			<textarea name="notes" id="notes" placeholder="<?php echo Translate::t ('add notes'); ?>"></textarea>
 			
 			<input type="hidden" name="id" value="<?php echo $task->id (); ?>" />
 			
-			<a class="button delete" href="<?php echo Url::display (array ('c' => 'task', 'a' => 'delete', 'params' => array ('id' => $task->id (), 'type' => 'inbox'))); ?>">Supprimer</a>
-			<input type="submit" value="Valider" />
+			<a class="button delete" href="<?php echo Url::display (array ('c' => 'task', 'a' => 'delete', 'params' => array ('id' => $task->id (), 'type' => 'inbox'))); ?>"><?php echo Translate::t ('delete'); ?></a>
+			<input type="submit" value="<?php echo Translate::t ('validate'); ?>" />
 		</form>
 	</div>
 	<?php } else { ?>
-	<div class="nothing">Il n'y a pas de tâches dans la boîte de réception.</div>
+	<div class="nothing"><?php echo Translate::t ('no activities in inbox'); ?></div>
 	<?php } ?>
 </div>

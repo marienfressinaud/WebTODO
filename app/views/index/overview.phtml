@@ -4,7 +4,7 @@
 		<div class="line">
 			<div class="cell">
 			<?php if (!empty ($this->tasks)) { ?>
-			<h2>Activités</h2>
+			<h2><?php echo Translate::t ('activities'); ?></h2>
 			<ul>
 				<?php foreach ($this->tasks as $task) { ?>
 				<?php 
@@ -31,13 +31,13 @@
 			<?php } ?>
 			
 			<?php if (!empty ($this->tasksArchive)) { ?>
-			<h2>Archives</h2>
+			<h2><?php echo Translate::t ('archives'); ?></h2>
 			<ul>
 				<?php foreach ($this->tasksArchive as $task) { ?>
 				<li class="<?php echo $task->type (); ?> disable">
 					<span>
 						<?php if ($task->dateFin (true) > 0) { ?>
-						<span class="date">(fini le <?php echo $task->dateFin (); ?>)</span>
+						<span class="date">(<?php echo Translate::t ('the end'); ?> <?php echo $task->dateFin (); ?>)</span>
 						<?php } ?>
 						<?php echo $task->libelle (); ?>
 						<a class="delete" href="<?php echo Url::display (array ('c' => 'archive', 'a' => 'delete', 'params' => array ('id' => $task->id (), 'type' => $task->type ()))); ?>">&nbsp;</a>
@@ -60,6 +60,6 @@
 		</div>
 	</div>
 	<?php } else { ?>
-	<div class="nothing">Vous n'avez rien à faire.</div>
+	<div class="nothing"><?php echo Translate::t ('nothing to do'); ?></div>
 	<?php } ?>
 </div>

@@ -1,26 +1,26 @@
 <div id="panel">
 	<div id="options">
 		<ul>
-			<li class="active"><a href="">Gestion des contextes</a></li>
+			<li class="active"><a href=""><?php echo Translate::t ('manage contexts'); ?></a></li>
 		</ul>
 	</div>
 
 	<div id="configuration">
-		<h2>Gérer les contextes</h2>
+		<h2><?php echo Translate::t ('manage contexts'); ?></h2>
 		<form method="post" action="">
 			<?php foreach ($this->contexts as $context) { ?>
 			<label for="context_<?php echo $context->id (); ?>">
 				<span><a class="delete" href="<?php echo Url::display (array ('c' => 'context', 'a' => 'delete', 'params' => array ('id' => $context->id ())));?>">&nbsp;</a></span>
-				Contexte n°<?php echo $context->id () + 1; ?>
+				<?php echo Translate::t ('context number'); ?> <?php echo $context->id () + 1; ?>
 			</label>
 			<input type="text" name="contexts[]" id="context_<?php echo $context->id (); ?>" value="<?php echo $context->libelle (); ?>" />
 			<?php } ?>
 			
-			<label for="newContext">Ajouter un contexte</label>
-			<input type="text" name="newContext" id="newContext" placeholder="Nouveau contexte" />
+			<label for="newContext"><?php echo Translate::t ('add context'); ?></label>
+			<input type="text" name="newContext" id="newContext" placeholder="<?php echo Translate::t ('new context'); ?>" />
 			
 			<label> </label>
-			<input type="submit" value="Valider" />
+			<input type="submit" value="<?php echo Translate::t ('validate'); ?>" />
 		</form>
 	</div>
 </div>
