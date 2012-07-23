@@ -13,6 +13,10 @@
 					 && $task->date (true) < $this->today) {
 						$class .= ' delay';
 					}
+					if ($task->date (true) >= $this->today
+					 && $task->date (true) < $this->today + 86400) {
+						$class .= ' today';
+					}
 				?>
 				<li class="<?php echo $class; ?>">
 					<a href="<?php echo Url::display (array ('c' => 'task', 'a' => 'change', 'params' => array ('id' => $task->id (), 'type' => $task->type (), 'session' => true))); ?>">

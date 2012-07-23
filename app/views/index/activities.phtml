@@ -21,7 +21,17 @@
 			<h2>À faire le <?php echo date ('d/m/Y', $this->day); ?></h2>
 			<ul>
 				<?php foreach ($this->tasks as $task) { ?>
-				<li class="<?php echo $task->type (); ?><?php if ($task == $this->task) { echo ' active'; } ?>">
+				<?php
+					$class = $task->type ();
+					if ($task == $this->task) {
+						$class .= ' active';
+					}
+					if ($task->date (true) >= $this->day
+					 && $task->date (true) < $this->day + 86400) {
+						$class .= ' today';
+					}
+				?>
+				<li class="<?php echo $class; ?>">
 					<a href="<?php echo Url::display (array ('c' => 'task', 'a' => 'change', 'params' => array ('id' => $task->id (), 'type' => $task->type (), 'session' => false))); ?>"><?php echo $task->libelle (); ?></a>
 				</li>
 				<?php } ?>

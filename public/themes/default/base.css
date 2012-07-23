@@ -19,6 +19,9 @@ ul {
 	ul li.reminder > * {
 		background: url("img/reminder.png") no-repeat 10px center;
 		}
+	ul li.today > * {
+		background-color: #eee;
+		}
 	ul li.delay > * {
 		background-color: #fdd;
 		}
