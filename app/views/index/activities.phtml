@@ -49,7 +49,7 @@
 				<?php } ?>
 				
 				<label for="reference">Référence</label>
-				<span class="info" id="reference"><?php echo $this->task->type (); ?></span>
+				<span class="info" id="reference"><?php echo Translate::t ($this->task->type ()); ?></span>
 				
 				<?php $contexts = $this->task->context (true); ?>
 				<?php if (!empty ($contexts)) { ?>
