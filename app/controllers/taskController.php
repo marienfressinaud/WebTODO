@@ -22,6 +22,70 @@ class taskController extends ActionController {
 		Request::forward (array ('a' => 'inbox'), true);
 	}
 	
+	public function updateAction () {
+		$taskDAO = new TaskDAO ();
+		
+		$id = Request::param ('id');
+		$type = Request::param ('type');
+		
+		if (Request::isPost ()) {
+			$id = Request::param ('id');
+			$type = Request::param ('type');
+			
+			$lib = Request::param ('libelle');
+			$date = Request::param ('date');
+			$reference = Request::param ('reference', 'action');
+			$context = Request::param ('context', array ());
+			$notes = Request::param ('notes', '');
+		
+			if ($id !== false
+			 && strlen ($lib) > 0
+			 && in_array ($reference, Task::$TYPES)) {
+				if ($date !== false) {
+					$date = strtotime ($date);
+				}
+				if ($reference != 'action' && $date === false) {
+					$date = time () + 86400;
+				}
+			
+				if ($date === false) {
+					$date = 0;
+				}
+			
+				$values = array (
+					'libelleTask' => $lib,
+					'dateTask'    => $date,
+					'contextTask' => $context,
+					'notesTask'   => $notes
+				);
+				$taskDAO->updateTask ($id, $type, $reference, $values);
+			}
+			
+			$task = $taskDAO->searchTask ($id, $reference);
+			$date = $task->date (true);
+			if ($date == 0) {
+				$date = time ();
+			}
+			$type = $reference;
+		
+			Session::_param ('date', $date);
+			Session::_param ('contexts', $task->context ());
+			Session::_param ('update');
+		} else {
+			Session::_param ('update', true);
+		}
+		
+		Session::_param (
+			'task',
+			array (
+				'id' => $id,
+				'type' => $type
+			)
+		);
+		
+		Request::forward (array ('a' => 'activities'), true);
+	}
+	
 	public function deleteAction () {
 		$id = Request::param ('id');
 		$type = Request::param ('type');

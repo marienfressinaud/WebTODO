@@ -42,40 +42,76 @@
 		<?php if (isset ($this->task)) { ?>
 		<div id="detailTask" class="line">
 			<div class="cell">
-			<form method="post" action="">
-				<?php if ($this->task->date (true) > 0) { ?>
-				<label for="date">Date</label>
-				<span class="info" id="date"><?php echo $this->task->date (); ?></span>
-				<?php } ?>
-				
-				<label for="reference">Référence</label>
-				<span class="info" id="reference"><?php echo Translate::t ($this->task->type ()); ?></span>
-				
-				<?php $contexts = $this->task->context (true); ?>
-				<?php if (!empty ($contexts)) { ?>
-				<label for="context">Contexte</label>
-				<span  class="info" id="context">
-					<?php foreach ($contexts as $context) { ?>
-					<?php echo $context; ?><br />
+			<form method="post" action="<?php echo Url::display (array ('c' => 'task', 'a' => 'update', 'params' => array ('id' => $this->task->id (), 'type' => $this->task->type ()))); ?>">
+				<?php if (!Session::param ('update')) { ?>
+					<?php if ($this->task->date (true) > 0) { ?>
+					<label for="date">Date</label>
+					<span class="info" id="date"><?php echo $this->task->date (); ?></span>
 					<?php } ?>
-				</span>
-				<?php } ?>
 				
-				<?php $notes = $this->task->notes (); ?>
-				<?php if (!empty ($notes)) { ?>
-				<label for="notes">Notes</label>
-				<span class="info" id="notes"><?php echo $notes; ?></span>
+					<label for="reference">Référence</label>
+					<span class="info" id="reference"><?php echo Translate::t ($this->task->type ()); ?></span>
+				
+					<?php $contexts = $this->task->context (true); ?>
+					<?php if (!empty ($contexts)) { ?>
+					<label for="context">Contexte</label>
+					<span  class="info" id="context">
+						<?php foreach ($contexts as $context) { ?>
+						<?php echo $context; ?><br />
+						<?php } ?>
+					</span>
+					<?php } ?>
+				
+					<?php $notes = $this->task->notes (); ?>
+					<?php if (!empty ($notes)) { ?>
+					<label for="notes">Notes</label>
+					<span class="info" id="notes"><?php echo $notes; ?></span>
+					<?php } ?>
+				<?php } else { ?>
+					<label for="libelle">Libellé</label>
+					<input type="text" name="libelle" id="libelle" value="<?php echo $this->task->libelle (); ?>" />
+					
+					<label for="date">Date</label>
+					<input type="date" name="date" id="date" placeholder="Annee-Mois-Jour" <?php if ($this->task->date (true) > 0) { echo 'value="' . date ('Y-m-d', $this->task->date (true)) . '"'; } ?>/>
+			
+					<label for="reference">Référencer</label>
+					<select name="reference" id="reference">
+						<option value="event" <?php if ($this->task->type () == 'event') { echo 'selected="selected"'; } ?>>Évènement</option>
+						<option value="reminder" <?php if ($this->task->type () == 'reminder') { echo 'selected="selected"'; } ?>>Rappel</option>
+						<option value="action" <?php if ($this->task->type () == 'action') { echo 'selected="selected"'; } ?>>Action</option>
+					</select>
+			
+					<label for="context">Contexte</label>
+					<select class="multi" name="context[]" id="context" multiple="multiple">
+						<?php foreach ($this->contexts as $context) { ?>
+						<option value="<?php echo $context->id (); ?>" <?php if (in_array ($context->id (), $this->task->context ())) { echo 'selected="selected"'; } ?>><?php echo $context->libelle (); ?></option>
+						<?php } ?>
+					</select>
+			
+					<label for="notes">Notes</label>
+					<textarea name="notes" id="notes" placeholder="Ajouter des notes"><?php echo $this->task->notes (); ?></textarea>
+			
+					<input type="hidden" name="id" value="<?php echo $this->task->id (); ?>" />
+					<input type="hidden" name="type" value="<?php echo $this->task->type (); ?>" />
+					<input type="submit" value="Valider" />
 				<?php } ?>
 			</form>
 			
-			<a class="button" href="<?php echo Url::display (array ('c' => 'archive', 'a' => 'archive', 'params' => array ('id' => $this->task->id (), 'type' => $this->task->type ()))); ?>">Marquée comme terminée</a>
+			<?php if (!Session::param ('update')) { ?>
+			<a class="button update" href="<?php echo Url::display (array ('c' => 'task', 'a' => 'update', 'params' => array ('id' => $this->task->id (), 'type' => $this->task->type ()))); ?>">Éditer</a><!--
+			--><a class="button" href="<?php echo Url::display (array ('c' => 'archive', 'a' => 'archive', 'params' => array ('id' => $this->task->id (), 'type' => $this->task->type ()))); ?>">Marquée comme terminée</a>
+			<?php } ?>
 			</div>
 		</div>
 		
 		<script type="text/javascript">
 		height = ($('body').height () - 50) / 2;
 		$('#listTasks .line .cell ul').height (height);
+		<?php if (Session::param ('update')) { ?>
+		$('#detailTask form').height (height);
+		<?php } else { ?>
 		$('#detailTask form').height (height - 50);
+		<?php } ?>
 		</script>
 		<?php } else { ?>
 		<script type="text/javascript">

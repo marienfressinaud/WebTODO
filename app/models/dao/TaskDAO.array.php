@@ -29,9 +29,13 @@ class TaskDAO extends Model_array {
 		$this->writeFile($this->array);
 	}
 	
-	public function updateTask ($id, $type, $values) {
+	public function updateTask ($id, $ancien_type, $nouv_type, $values) {
+		if ($ancien_type != $nouv_type) {
+			$this->deleteTask ($id, $ancien_type);
+		}
+		
 		foreach ($values as $key => $value) {
-			$this->array[$type][$id][$key] = $value;
+			$this->array[$nouv_type][$id][$key] = $value;
 		}
 		
 		$this->writeFile($this->array);

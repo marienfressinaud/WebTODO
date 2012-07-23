@@ -45,6 +45,12 @@ return array (
 		'params'     => array ('type', 'id')
 	),
 	array (
+		'route'      => '/modifier_(\w+)-tache_(\d+)',
+		'controller' => 'task',
+		'action'     => 'update',
+		'params'     => array ('type', 'id')
+	),
+	array (
 		'route'      => '/change_(\w+)-tache_(\d+)-(\d?)',
 		'controller' => 'task',
 		'action'     => 'change',
@@ -61,7 +67,7 @@ return array (
 	
 	/////
 	array (
-		'route'      => '/archive_(\w+)-tache_(\d+)',
+		'route'      => '/archiver_(\w+)-tache_(\d+)',
 		'controller' => 'archive',
 		'action'     => 'archive',
 		'params'     => array ('type', 'id')
