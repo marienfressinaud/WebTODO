@@ -56,8 +56,8 @@
 					<?php if (!empty ($contexts)) { ?>
 					<label for="context"><?php echo Translate::t ('context'); ?></label>
 					<span  class="info" id="context">
-						<?php foreach ($contexts as $context) { ?>
-						<?php echo $context; ?><br />
+						<?php $br = false; foreach ($contexts as $context) { ?>
+						<?php if ($br) { echo '<br />'; } else { $br = true; } ?><?php echo $context; ?>
 						<?php } ?>
 					</span>
 					<?php } ?>

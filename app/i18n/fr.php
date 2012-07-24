@@ -16,7 +16,7 @@ return array (
 	'delete'                        => 'Supprimer',
 	'edit'                          => 'Éditer',
 	'event'                         => 'Évènement',
-	'finish'                        => 'Marquée comme terminée',
+	'finish'                        => 'Marquer comme terminée',
 	'label'                         => 'Libellé',
 	'manage contexts'               => 'Gérer les contextes',
 	'new context'                   => 'Nouveau contexte',

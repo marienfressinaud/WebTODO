@@ -32,7 +32,7 @@ class taskController extends ActionController {
 			$id = Request::param ('id');
 			$type = Request::param ('type');
 			
-			$lib = Request::param ('libelle');
+			$lib = htmlspecialchars (Request::param ('libelle'));
 			$date = Request::param ('date');
 			$reference = Request::param ('reference', 'action');
 			$context = Request::param ('context', array ());
