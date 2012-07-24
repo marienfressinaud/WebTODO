@@ -43,7 +43,7 @@
 		<div id="detailTask" class="line">
 			<div class="cell">
 			<form method="post" action="<?php echo Url::display (array ('c' => 'task', 'a' => 'update', 'params' => array ('id' => $this->task->id (), 'type' => $this->task->type ()))); ?>">
-				<?php if (!Session::param ('update')) { ?>
+				<?php if (!$this->update) { ?>
 					<?php if ($this->task->date (true) > 0) { ?>
 					<label for="date"><?php echo Translate::t ('date'); ?></label>
 					<span class="info" id="date"><?php echo $this->task->date (); ?></span>
@@ -97,7 +97,7 @@
 				<?php } ?>
 			</form>
 			
-			<?php if (!Session::param ('update')) { ?>
+			<?php if (!$this->update) { ?>
 			<a class="button update" href="<?php echo Url::display (array ('c' => 'task', 'a' => 'update', 'params' => array ('id' => $this->task->id (), 'type' => $this->task->type ()))); ?>"><?php echo Translate::t ('edit'); ?></a><!--
 			--><a class="button" href="<?php echo Url::display (array ('c' => 'archive', 'a' => 'archive', 'params' => array ('id' => $this->task->id (), 'type' => $this->task->type ()))); ?>"><?php echo Translate::t ('finish'); ?></a>
 			<?php } ?>
@@ -107,7 +107,7 @@
 		<script type="text/javascript">
 		height = ($('body').height () - 50) / 2;
 		$('#listTasks .line .cell ul').height (height);
-		<?php if (Session::param ('update')) { ?>
+		<?php if ($this->update) { ?>
 		$('#detailTask form').height (height);
 		<?php } else { ?>
 		$('#detailTask form').height (height - 50);

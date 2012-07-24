@@ -59,7 +59,12 @@ class indexController extends ActionController {
 		$task = Session::param ('task');
 		if ($task !== false) {
 			$this->view->task = $taskDAO->searchTask ($task['id'], $task['type']);
-			Session::_param ('task');
+		}
+		
+		// Gestion si on veut modifier tâche
+		if (Session::param ('update') === true) {
+			$this->view->update = true;
+			Session::_param ('update');
 		}
 	}
 	

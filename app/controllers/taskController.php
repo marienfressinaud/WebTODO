@@ -70,7 +70,6 @@ class taskController extends ActionController {
 		
 			Session::_param ('date', $date);
 			Session::_param ('contexts', $task->context ());
-			Session::_param ('update');
 		} else {
 			Session::_param ('update', true);
 		}
