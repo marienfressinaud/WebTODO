@@ -1,10 +1,6 @@
 <?php
   
 class taskController extends ActionController {
-	public function lastAction () {
-		
-	}
-
 	public function addAction () {
 		$task = Request::param ('task');
 		
