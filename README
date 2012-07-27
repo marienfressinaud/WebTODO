@@ -1,1 +1,35 @@
-Application de TODO list version web (ou ce qu'aurait dû être Yago si je l'avais continué)
+Application de gestion de ses activités, basé sur le travail effectué sur YAGO.
+
+Version
+=======
+random ();
+
+Disclaimer
+==========
+Cette application a été développée dans un but purement personnel. Ceci expliquant que le multi-compte n'est pas pris en charge et que l'application n'est pas protégé par un mot de passe (cependant, voir conseil n°3).
+
+Installation
+============
+1) Récupérer les sources et les déposer sur le serveur web
+2) Modifier dans le fichier `app/configuration/application.ini` le paramètre `base_url` pour qu'il corresponde au chemin accédant au répertoire `public` à partir du navigateur.
+3) Si votre serveur ne permet pas la réécriture d'url, mettez `use_url_rewriting` à `false` (et vous pouvez supprimer le fichier `public/.htaccess`)
+4) Assurez vous que les droits en lecture / écriture sur les fichiers situés dans `public/data` sont suffisants pour votre serveur.
+4) Tout devrait fonctionner !
+
+Conseils
+========
+1) Modifier les paramètres de configuration :
+    - `environment` à `production`
+    - `sel_application` à... n'importe quelle chaîne aléatoire
+    - `title` à ce que vous voulez
+    - Laissez les autres paramètres à leur valeur par défaut (seule la langue française est prise en charge, et le cache n'a pas été configuré)
+2) Déplacez les répertoires `app`, `lib` et `log` de façon à ce qu'ils ne soient pas accessibles par un navigateur web (bien que ça ne présente pas de gros risques ici)
+3) Vous pouvez protéger l'accès à l'application à travers le fichier .htaccess (DuckDuckGo est votre ami)
+
+Problèmes
+=========
+Si vous rencontrez des problèmes, vous pouvez me contacter à l'adresse <dev@marienfressinaud.fr>
+
+Licence
+=======
+AGPL 3 (https://www.gnu.org/licenses/)
