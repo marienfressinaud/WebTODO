@@ -78,4 +78,11 @@ return array (
 		'action'     => 'delete',
 		'params'     => array ('type', 'id')
 	),
+	
+	/////
+	array (
+		'route'      => '/api/ajouter_tache',
+		'controller' => 'api',
+		'action'     => 'add'
+	),
 );
