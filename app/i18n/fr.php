@@ -21,7 +21,7 @@ return array (
 	'manage contexts'               => 'Gérer les contextes',
 	'new context'                   => 'Nouveau contexte',
 	'notes'                         => 'Notes',
-	'nothing to do'                  => 'Vous n\'avez rien à faire.',
+	'nothing to do'                 => 'Vous n\'avez rien à faire.',
 	'no activities in inbox'        => 'Il n\'y a pas de tâches dans la boîte de réception.',
 	'options'                       => 'Options',
 	'overview'                      => 'Vue d\'ensemble',
@@ -32,4 +32,5 @@ return array (
 	'the end'                       => 'Fini le',
 	'validate'                      => 'Valider',
 	'year-month-day'                => 'Année-Mois-Jour',
+	'go back home'                  => 'Retour à l\'accueil',
 );

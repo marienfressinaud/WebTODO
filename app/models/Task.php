@@ -55,8 +55,12 @@ class Task extends Model {
 		
 		return $contexts;
 	}
-	public function notes () {
-		return nl2br ($this->notes);
+	public function notes ($nl2br = true) {
+		if ($nl2br) {
+			return nl2br ($this->notes);
+		} else {
+			return $this->notes;
+		}
 	}
 	
 	public function _id ($id) {

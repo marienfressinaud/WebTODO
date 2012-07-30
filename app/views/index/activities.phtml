@@ -89,7 +89,7 @@
 					</select>
 			
 					<label for="notes"><?php echo Translate::t ('notes'); ?></label>
-					<textarea name="notes" id="notes" placeholder="<?php echo Translate::t ('add notes'); ?>"><?php echo $this->task->notes (); ?></textarea>
+					<textarea name="notes" id="notes" placeholder="<?php echo Translate::t ('add notes'); ?>"><?php echo $this->task->notes (false); ?></textarea>
 			
 					<input type="hidden" name="id" value="<?php echo $this->task->id (); ?>" />
 					<input type="hidden" name="type" value="<?php echo $this->task->type (); ?>" />
