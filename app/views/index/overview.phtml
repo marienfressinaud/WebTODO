@@ -4,7 +4,7 @@
 		<div class="line">
 			<div class="cell">
 			<?php if (!empty ($this->tasks)) { ?>
-			<h2><?php echo Translate::t ('activities'); ?></h2>
+			<h2><?php echo count ($this->tasks) . ' ' . Translate::t ('activities'); ?></h2>
 			<ul>
 				<?php foreach ($this->tasks as $task) { ?>
 				<?php 
@@ -31,7 +31,7 @@
 			<?php } ?>
 			
 			<?php if (!empty ($this->tasksArchive)) { ?>
-			<h2><?php echo Translate::t ('archives'); ?></h2>
+			<h2><?php echo count ($this->tasksArchive) . ' ' . Translate::t ('archives'); ?></h2>
 			<ul>
 				<?php foreach ($this->tasksArchive as $task) { ?>
 				<li class="<?php echo $task->type (); ?> disable">
