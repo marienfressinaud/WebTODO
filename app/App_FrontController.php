@@ -15,7 +15,6 @@ class App_FrontController extends FrontController {
 	}
 	
 	private function initModels () {
-		include (APP_PATH . '/../lib/Model_array.php');
 		include (APP_PATH . '/models/Task.php');
 		include (APP_PATH . '/models/Context.php');
 	}
