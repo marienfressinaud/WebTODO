@@ -10,21 +10,10 @@
 	<body>
 
 <div id="global">
-	<div id="menu">
-		<div id="addTaskMenu">
-			<form method="post" action="<?php echo Url::display (array ('c' => 'task', 'a' => 'add')); ?>">
-				<input type="text" name="task" placeholder="<?php echo Translate::t ('add activity'); ?>" />
-				<input type="submit" value="+" />
-			</form>
-		</div>
-		
-		<div id="sideMenu">
-<?php $this->partial ('sideMenu'); ?>
-		</div>
-	</div>
+	<?php $this->partial ('sideMenu'); ?>
 	
-	<div id="content">
-<?php $this->render (); ?>
+	<div id="main">
+		<?php $this->render (); ?>
 	</div>
 </div>
 

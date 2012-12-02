@@ -93,7 +93,18 @@ class indexController extends ActionController {
 		
 		$archives = array_merge ($events, $reminders, $actions);
 		usort ($archives, 'sortArchivesByDate');
-		$this->view->tasksArchive = $archives;
+		// Gestion pagination
+		try {
+			$page = Request::param ('page', 1);
+			$this->view->archivesPaginator = new Paginator ($archives);
+			$this->view->archivesPaginator->_nbItemsPerPage (20);
+			$this->view->archivesPaginator->_currentPage ($page);
+		} catch (CurrentPagePaginationException $e) {
+			Error::error (
+				404,
+				array ('error' => array ('La page que vous cherchez n\'existe pas'))
+			);
+		}
 		
 		$this->view->today = strtotime (date ('Y-m-d', time ()));
 	}

@@ -1,8 +1,7 @@
-<h2><?php echo $this->code; ?></h2>
+<div class="table">
+	<div class="nothing">
+		<h2><?php echo $this->code; ?></h2>
 
-<ul>
-	<?php foreach ($this->logs as $log) { ?>
-	<li class="disable"><span><?php echo $log; ?></span></li>
-	<?php } ?>
-	<li><a href="<?php echo Url::display (); ?>"><?php echo Translate::t ('go back home'); ?></a></li>
-</ul>
+		<p><a href="<?php echo Url::display (); ?>">Revenir à l'accueil</a></p>
+	</div>
+</div>

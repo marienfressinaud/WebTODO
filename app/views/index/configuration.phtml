@@ -1,16 +1,15 @@
-<div id="panel">
-	<div id="options">
-		<ul>
-			<li class="active"><a href=""><?php echo Translate::t ('manage contexts'); ?></a></li>
-		</ul>
-	</div>
+<div class="table">
+	<ul class="aside">
+		<li class="active"><a href=""><?php echo Translate::t ('manage contexts'); ?></a></li>
+	</ul>
 
-	<div id="configuration">
-		<h2><?php echo Translate::t ('manage contexts'); ?></h2>
+	<div class="content_table">
 		<form method="post" action="">
+			<h2><?php echo Translate::t ('manage contexts'); ?></h2>
+			
 			<?php foreach ($this->contexts as $context) { ?>
 			<label for="context_<?php echo $context->id (); ?>">
-				<span><a class="delete" href="<?php echo Url::display (array ('c' => 'context', 'a' => 'delete', 'params' => array ('id' => $context->id ())));?>">&nbsp;</a></span>
+				<span><a class="delete" href="<?php echo Url::display (array ('c' => 'context', 'a' => 'delete', 'params' => array ('id' => $context->id ())));?>">X</a></span>
 				<?php echo Translate::t ('context number'); ?> <?php echo $context->id () + 1; ?>
 			</label>
 			<input type="text" name="contexts[]" id="context_<?php echo $context->id (); ?>" value="<?php echo $context->libelle (); ?>" />

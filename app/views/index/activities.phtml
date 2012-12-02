@@ -1,124 +1,88 @@
-<div id="panel">
-	<div id="optionPanel">
-		<h2><?php echo Translate::t ('options'); ?></h2>
-		<form method="post" action="">
-			<input type="date" name="date" id="date" placeholder="<?php echo Translate::t ('year-month-day'); ?>" value="<?php echo date ('Y-m-d', $this->day); ?>" />
-			
-			<?php foreach ($this->contexts as $context) { ?>
-			<br />
-			<input type="checkbox" name="contexts[]" id="check_<?php echo $context->id (); ?>" value="<?php echo $context->id (); ?>" <?php if (in_array ($context->id (), $this->contextsCheck)) { echo 'checked="checked"'; } ?>/>
-			<label for="check_<?php echo $context->id (); ?>" class="for_checkbox"><?php echo $context->libelle (); ?></label>
-			<?php } ?><br />
-			
-			<input type="submit" value="<?php echo Translate::t ('refresh'); ?>" />
-		</form>
-	</div>
-	
+<div class="table">
 	<?php if (!empty ($this->tasks)) { ?>
-	<div id="listTasks">
-		<div class="line">
-			<div class="cell">
-			<h2><?php echo Translate::t ('date to do'); ?> <?php echo date (Translate::t ('date format'), $this->day); ?></h2>
-			<ul>
-				<?php foreach ($this->tasks as $task) { ?>
-				<?php
-					$class = $task->type ();
-					if ($task == $this->task) {
-						$class .= ' active';
-					}
-					if ($task->date (true) >= $this->day
-					 && $task->date (true) < $this->day + 86400) {
-						$class .= ' today';
-					}
-				?>
-				<li class="<?php echo $class; ?>">
-					<a href="<?php echo Url::display (array ('c' => 'task', 'a' => 'change', 'params' => array ('id' => $task->id (), 'type' => $task->type (), 'session' => false))); ?>"><?php echo $task->libelle (); ?></a>
-				</li>
-				<?php } ?>
-			</ul>
-			</div>
-		</div>
+	<ul class="aside large">
+		<li><h2><?php echo Translate::t ('date to do'); ?> <?php echo date (Translate::t ('date format'), $this->day); ?></h2></li>
+		<?php foreach ($this->tasks as $task) { ?>
+		<?php
+			$class = $task->type ();
+			if ($task == $this->task) {
+				$class .= ' active';
+			}
+			if ($task->date (true) >= $this->day
+			 && $task->date (true) < $this->day + 86400) {
+				$class .= ' today';
+			}
+		?>
+		<li class="<?php echo $class; ?>">
+			<a href="<?php echo Url::display (array ('c' => 'task', 'a' => 'change', 'params' => array ('id' => $task->id (), 'type' => $task->type (), 'session' => false))); ?>"><?php echo $task->libelle (); ?></a>
+		</li>
+		<?php } ?>
+	</ul>
 		
-		<?php if (isset ($this->task)) { ?>
-		<div id="detailTask" class="line">
-			<div class="cell">
-			<form method="post" action="<?php echo Url::display (array ('c' => 'task', 'a' => 'update', 'params' => array ('id' => $this->task->id (), 'type' => $this->task->type ()))); ?>">
-				<?php if (!$this->update) { ?>
-					<?php if ($this->task->date (true) > 0) { ?>
-					<label for="date"><?php echo Translate::t ('date'); ?></label>
-					<span class="info" id="date"><?php echo $this->task->date (); ?></span>
-					<?php } ?>
-				
-					<label for="reference"><?php echo Translate::t ('reference'); ?></label>
-					<span class="info" id="reference"><?php echo Translate::t ($this->task->type ()); ?></span>
-				
-					<?php $contexts = $this->task->context (true); ?>
-					<?php if (!empty ($contexts)) { ?>
-					<label for="context"><?php echo Translate::t ('context'); ?></label>
-					<span  class="info" id="context">
-						<?php $br = false; foreach ($contexts as $context) { ?>
-						<?php if ($br) { echo '<br />'; } else { $br = true; } ?><?php echo $context; ?>
-						<?php } ?>
-					</span>
-					<?php } ?>
-				
-					<?php $notes = $this->task->notes (); ?>
-					<?php if (!empty ($notes)) { ?>
-					<label for="notes"><?php echo Translate::t ('notes'); ?></label>
-					<span class="info" id="notes"><?php echo $notes; ?></span>
-					<?php } ?>
-				<?php } else { ?>
-					<label for="libelle"><?php echo Translate::t ('label'); ?></label>
-					<input type="text" name="libelle" id="libelle" value="<?php echo $this->task->libelle (); ?>" />
-					
-					<label for="date"><?php echo Translate::t ('date'); ?></label>
-					<input type="date" name="date" id="date" placeholder="<?php echo Translate::t ('year-month-day'); ?>" <?php if ($this->task->date (true) > 0) { echo 'value="' . date ('Y-m-d', $this->task->date (true)) . '"'; } ?>/>
-			
-					<label for="reference"><?php echo Translate::t ('reference'); ?></label>
-					<select name="reference" id="reference">
-						<option value="event" <?php if ($this->task->type () == 'event') { echo 'selected="selected"'; } ?>><?php echo Translate::t ('event'); ?></option>
-						<option value="reminder" <?php if ($this->task->type () == 'reminder') { echo 'selected="selected"'; } ?>><?php echo Translate::t ('reminder'); ?></option>
-						<option value="action" <?php if ($this->task->type () == 'action') { echo 'selected="selected"'; } ?>><?php echo Translate::t ('action'); ?></option>
-					</select>
-			
-					<label for="context"><?php echo Translate::t ('context'); ?></label>
-					<select class="multi" name="context[]" id="context" multiple="multiple">
-						<?php foreach ($this->contexts as $context) { ?>
-						<option value="<?php echo $context->id (); ?>" <?php if (in_array ($context->id (), $this->task->context ())) { echo 'selected="selected"'; } ?>><?php echo $context->libelle (); ?></option>
-						<?php } ?>
-					</select>
-			
-					<label for="notes"><?php echo Translate::t ('notes'); ?></label>
-					<textarea name="notes" id="notes" placeholder="<?php echo Translate::t ('add notes'); ?>"><?php echo $this->task->notes (false); ?></textarea>
-			
-					<input type="hidden" name="id" value="<?php echo $this->task->id (); ?>" />
-					<input type="hidden" name="type" value="<?php echo $this->task->type (); ?>" />
-					<input type="submit" value="Valider" />
+	<?php if (isset ($this->task)) { ?>
+		<?php if (!$this->update) { ?>
+		<div class="content_table">
+			<?php if ($this->task->date (true) > 0) { ?>
+			<label for="date"><?php echo Translate::t ('date'); ?></label>
+			<span class="info" id="date"><?php echo $this->task->date (); ?></span>
+			<?php } ?>
+
+			<label for="reference"><?php echo Translate::t ('reference'); ?></label>
+			<span class="info" id="reference"><?php echo Translate::t ($this->task->type ()); ?></span>
+
+			<?php $contexts = $this->task->context (true); ?>
+			<?php if (!empty ($contexts)) { ?>
+			<label for="context"><?php echo Translate::t ('context'); ?></label>
+			<span  class="info" id="context">
+				<?php $br = false; foreach ($contexts as $context) { ?>
+				<?php if ($br) { echo '<br />'; } else { $br = true; } ?><?php echo $context; ?>
 				<?php } ?>
-			</form>
-			
-			<?php if (!$this->update) { ?>
+			</span>
+			<?php } ?>
+
+			<?php $notes = $this->task->notes (); ?>
+			<?php if (!empty ($notes)) { ?>
+			<label for="notes"><?php echo Translate::t ('notes'); ?></label>
+			<span class="info" id="notes"><?php echo $notes; ?></span>
+			<?php } ?>
+			<br />
+	
 			<a class="button update" href="<?php echo Url::display (array ('c' => 'task', 'a' => 'update', 'params' => array ('id' => $this->task->id (), 'type' => $this->task->type ()))); ?>"><?php echo Translate::t ('edit'); ?></a><!--
 			--><a class="button" href="<?php echo Url::display (array ('c' => 'archive', 'a' => 'archive', 'params' => array ('id' => $this->task->id (), 'type' => $this->task->type ()))); ?>"><?php echo Translate::t ('finish'); ?></a>
-			<?php } ?>
-			</div>
 		</div>
 		
-		<script type="text/javascript">
-		height = ($('body').height () - 50) / 2;
-		$('#listTasks .line .cell ul').height (height);
-		<?php if ($this->update) { ?>
-		$('#detailTask form').height (height);
 		<?php } else { ?>
-		$('#detailTask form').height (height - 50);
+		
+		<form method="post" action="<?php echo Url::display (array ('c' => 'task', 'a' => 'update', 'params' => array ('id' => $this->task->id (), 'type' => $this->task->type ()))); ?>">
+			<label for="libelle"><?php echo Translate::t ('label'); ?></label>
+			<input type="text" name="libelle" id="libelle" value="<?php echo $this->task->libelle (); ?>" />
+			
+			<label for="date"><?php echo Translate::t ('date'); ?></label>
+			<input type="date" name="date" id="date" placeholder="<?php echo Translate::t ('year-month-day'); ?>" <?php if ($this->task->date (true) > 0) { echo 'value="' . date ('Y-m-d', $this->task->date (true)) . '"'; } ?>/>
+	
+			<label for="reference"><?php echo Translate::t ('reference'); ?></label>
+			<select name="reference" id="reference">
+				<option value="event" <?php if ($this->task->type () == 'event') { echo 'selected="selected"'; } ?>><?php echo Translate::t ('event'); ?></option>
+				<option value="reminder" <?php if ($this->task->type () == 'reminder') { echo 'selected="selected"'; } ?>><?php echo Translate::t ('reminder'); ?></option>
+				<option value="action" <?php if ($this->task->type () == 'action') { echo 'selected="selected"'; } ?>><?php echo Translate::t ('action'); ?></option>
+			</select>
+	
+			<label for="context"><?php echo Translate::t ('context'); ?></label>
+			<select class="multi" name="context[]" id="context" multiple="multiple">
+				<?php foreach ($this->contexts as $context) { ?>
+				<option value="<?php echo $context->id (); ?>" <?php if (in_array ($context->id (), $this->task->context ())) { echo 'selected="selected"'; } ?>><?php echo $context->libelle (); ?></option>
+				<?php } ?>
+			</select>
+	
+			<label for="notes"><?php echo Translate::t ('notes'); ?></label>
+			<textarea name="notes" id="notes" placeholder="<?php echo Translate::t ('add notes'); ?>"><?php echo $this->task->notes (false); ?></textarea>
+	
+			<input type="hidden" name="id" value="<?php echo $this->task->id (); ?>" />
+			<input type="hidden" name="type" value="<?php echo $this->task->type (); ?>" />
+			<input type="submit" value="Valider" />
+		</form>
 		<?php } ?>
-		</script>
-		<?php } else { ?>
-		<script type="text/javascript">
-		height = $('body').height () - 50;
-		$('#listTasks .line .cell ul').height (height);
-		</script>
-		<?php } ?>
+	<?php } ?>
 	</div>
 	<?php } else { ?>
 	<div class="nothing"><?php echo Translate::t ('nothing to do'); ?></div>

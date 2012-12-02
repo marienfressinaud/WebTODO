@@ -1,0 +1,12 @@
+<?php
+	$c = Request::controllerName ();
+	$a = Request::actionName ();
+	$params = Request::params ();
+?>
+
+<?php if ($this->currentPage > 1) { ?>
+<?php $params[$getteur] = $this->currentPage - 1; ?>
+<a class="pager-previous" href="<?php echo Url::display (array ('c' => $c, 'a' => $a, 'params' => $params)); ?>">‹ Avant</a><?php } 
+
+if ($this->currentPage < $this->nbPage) { $params[$getteur] = $this->currentPage + 1; ?><a class="pager-next" href="<?php echo Url::display (array ('c' => $c, 'a' => $a, 'params' => $params)); ?>">Après ›</a>
+<?php } ?>

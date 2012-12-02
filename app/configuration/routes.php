@@ -22,6 +22,12 @@ return array (
 		'action'     => 'overview'
 	),
 	array (
+		'route'      => '/vue-d-ensemble\?p=(\d+)',
+		'controller' => 'index',
+		'action'     => 'overview',
+		'params'     => array ('page')
+	),
+	array (
 		'route'      => '/parametrage',
 		'controller' => 'index',
 		'action'     => 'configuration'

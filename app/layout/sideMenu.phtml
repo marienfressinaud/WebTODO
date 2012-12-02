@@ -1,14 +1,39 @@
-<ul>
-	<li <?php if (Request::actionName () == 'activities') { echo 'class="active"'; } ?>>
-		<a href="<?php echo Url::display (array ('a' => 'activities')); ?>"><?php echo Translate::t ('activities in progress'); ?></a>
-	</li>
-	<li <?php if (Request::actionName () == 'inbox') { echo 'class="active"'; } ?>>
-		<a href="<?php echo Url::display (array ('a' => 'inbox')); ?>"><?php echo Translate::t ('sort inbox'); ?></a>
-	</li>
-	<li <?php if (Request::actionName () == 'overview') { echo 'class="active"'; } ?>>
-		<a href="<?php echo Url::display (array ('a' => 'overview')); ?>"><?php echo Translate::t ('overview'); ?></a>
-	</li>
-	<li <?php if (Request::actionName () == 'configuration') { echo 'class="active"'; } ?>>
-		<a href="<?php echo Url::display (array ('a' => 'configuration')); ?>"><?php echo Translate::t ('configure'); ?></a>
-	</li>
-</ul>
+<div id="main_adise" class="aside">
+	<form id="addTaskMenu" method="post" action="<?php echo Url::display (array ('c' => 'task', 'a' => 'add')); ?>">
+		<input type="text" name="task" placeholder="<?php echo Translate::t ('add activity'); ?>" /><!--
+		--><input type="submit" value="+" />
+	</form>
+
+	<ul id="menu">
+		<li <?php if (Request::actionName () == 'activities') { echo 'class="active"'; } ?>>
+			<a href="<?php echo Url::display (array ('a' => 'activities')); ?>"><?php echo Translate::t ('activities in progress'); ?></a>
+		</li>
+		<li <?php if (Request::actionName () == 'inbox') { echo 'class="active"'; } ?>>
+			<a href="<?php echo Url::display (array ('a' => 'inbox')); ?>"><?php echo Translate::t ('sort inbox'); ?></a>
+		</li>
+		<li <?php if (Request::actionName () == 'overview') { echo 'class="active"'; } ?>>
+			<a href="<?php echo Url::display (array ('a' => 'overview')); ?>"><?php echo Translate::t ('overview'); ?></a>
+		</li>
+		<li <?php if (Request::actionName () == 'configuration') { echo 'class="active"'; } ?>>
+			<a href="<?php echo Url::display (array ('a' => 'configuration')); ?>"><?php echo Translate::t ('configure'); ?></a>
+		</li>
+	</ul>
+	
+	<?php if (Request::actionName () == 'activities') { ?>
+	<form id="options" method="post" action="">
+		<h2>Filtrer</h2>
+		<input type="date" name="date" id="date" placeholder="<?php echo Translate::t ('year-month-day'); ?>" value="<?php echo date ('Y-m-d', $this->day); ?>" />
+
+		<?php foreach ($this->contexts as $context) { ?>
+		<div class="checkbox_group">
+			<input type="checkbox" name="contexts[]" id="check_<?php echo $context->id (); ?>" value="<?php echo $context->id (); ?>" <?php if (in_array ($context->id (), $this->contextsCheck)) { echo 'checked="checked"'; } ?>/>
+			<label for="check_<?php echo $context->id (); ?>"><?php echo $context->libelle (); ?></label>
+		</div>
+		<?php } ?>
+
+		<input type="submit" value="<?php echo Translate::t ('refresh'); ?>" />
+	</form>
+	<?php } ?>
+</div>
+
+

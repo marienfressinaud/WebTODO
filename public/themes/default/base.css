@@ -1,189 +1,315 @@
-* {
-	margin: 0; padding: 0;
-	font-family: Cantarell; font-size: 100%;
-	}
+	* {
+	margin: 0;
+	padding: 0;
+}
 html, body {
-	height: 100%; overflow: hidden;
+	height: 100%;
+}
+
+/* LIENS */
+a {
+	color: #0062BE;
+	text-decoration: none;
+}
+	a:hover {
+		text-decoration: underline;
+	}
+	a.delete {
+		display: inline-block;
+		height: 25px;
+		width: 25px;
+		text-align: center;
+		line-height: 25px;
+		background: #eee;
+		border: 1px solid #aaa;
+		border-radius: 50px;
+		color: #666;
+		font-weight: bold;
+	}
+		a.delete:hover {
+			background: #fff;
+			text-decoration: none;
+		}
+
+/* LISTES */
+ul, ol {
+	margin: 10px 0 10px 30px;
+	line-height: 190%;
+}
+
+/* TITRES */
+h1, h2, h3 {
+	min-height: 40px;
+	padding: 10px 0 0;
+	line-height: 40px;
+}
+
+/* IMG */
+img {
+	max-width: 100%;
+	vertical-align: middle;
+}
+	a img {
+		border: none;
 	}
 
-ul {
-	list-style: none;
-	}
-	ul li > * {
-		display: inline-block; min-height: 20px; width: 90%; padding: 15px 5%;
-		color: #000; text-decoration: none; line-height: 20px; vertical-align: top; word-wrap: break-word;
-		}
-	ul li.event > * {
-		background: url("img/event.png") no-repeat 10px center;
-		}
-	ul li.reminder > * {
-		background: url("img/reminder.png") no-repeat 10px center;
-		}
-	ul li.today > * {
-		background-color: #eee;
-		}
-	ul li.delay > * {
-		background-color: #fdd;
-		}
-	ul li.active > * {
-		background-color: #4499dd !important; color: #fff;
-		}
-	ul li.disable > * {
-		background-color: #eee !important; color: #666; opacity: 0.5;
-		}
-	ul li:hover > * {
-		background-color: #ddd;
-		}
-		ul li.delay:hover > * {
-			background-color: #ecc;
-			}
-
-h2 {
-	display: inline-block; min-height: 20px; width: 90%; padding: 15px 5%;
-	background: #aaa; color: #fff; font-weight: bold; text-align: center; line-height: 20px; vertical-align: top; word-wrap: break-word;
-	}
-
+/* FORMULAIRES */
 form {
-	padding: 0; min-width: 300px;
-	text-align: center;
+	width: 450px;
+	max-width: 100%;
+	margin: 20px auto;
+	padding: 20px;
+	background: #f0f0f0;
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	box-shadow: 0 1px 3px #aaa;
+}
+	label {
+		display: block;
+		margin: 20px 0 0;
+		padding: 0 20px 0 0;
+		font-weight: bold;
 	}
-	form * {
-		display: inline-block; width: 40%; margin: 2px 0; min-height: 46px;
-		vertical-align: middle; line-height: 46px;
+	input:focus, textarea:focus {
+		color: #3366cc !important;
+		border: 1px solid #3366cc !important;
+	}
+	input[type="text"], input[type="url"], input[type="email"], input[type="number"], input[type="date"], textarea {
+		display: block;
+		height: 30px;
+		width: 430px;
+		max-width: 95%;
+		margin: 5px 0 5px;
+		padding: 5px 10px;
+		background: #fff;
+		border: 1px solid #ccc;
+		border-radius: 5px;
+		font-size: 90%;
+	}
+		textarea {
+			min-height: 100px;
+			font-size: 110%;
+			line-height: 150%;
+			font-family: Monospace;
 		}
-		form > br {
-			display: block;
-			}
-		label {
-			color: #666; font-weight: bold; text-align: right;
-			}
-			label.for_checkbox {
-				width: 50%; padding: 0 0 0 10px;
-				text-align: left;
-				}
-		input, textarea {
-			min-height: 44px;
-			background: #fff; color: #666; border: 1px solid #aaa; border-radius: 3px; line-height: 44px;
-			}
-			input[type="submit"] {
-				background: url("img/backSubmit.png") repeat-x center; color: #000; font-weight: bold; cursor: pointer; box-shadow: 1px 1px 2px #cfcfcf;
-				}
-			input[type="checkbox"] {
-				width: 15px; min-height: 15px;
-				border: none;
-				}
-			textarea {
-				min-height: 100px;
-				line-height: 120%;
-				}
-		select {
-			width: 41%; min-height: 0;
-			}
-			select.multi {
-				height: 150px;
-				background: #fff; border: 1px solid #aaa; border-radius: 3px;
-				
-				}
-			select option {
-				display: block; width: 100%; min-height: 25px; margin: 0; padding: 2px 5px;
-				background: #fff;
-				}
-		a.button {
-			min-height: 44px;
-			font-weight: bold; box-shadow: 1px 1px 2px #cfcfcf; text-align: center; text-decoration: none; border-radius: 3px; border: 1px solid #aaa; line-height: 44px;
-			}
-			a.button.delete {
-				background: url("img/backDelete.png") repeat-x center; color: #fff;
-				}
-			a.button.submit {
-				background: url("img/backSubmit.png") repeat-x center; color: #000;
-				}
-		form .info {
-			padding: 0 0 0 10px;
-			text-align: left;
-			}
-	:-moz-placeholder {
-		color: #aaa; font-style: italic;
+	input[type="submit"], button {
+		display: block;
+		height: 40px;
+		width: 100%;
+		margin: 5px 0 5px;
+		padding: 5px 0;
+	}
+	select {
+		width: 100%;
+		padding: 5px;
+	}
+	.radio_group, .checkbox_group {
+		line-height: 35px;
+	}
+		.radio_group label, .checkbox_group label {
+			display: inline-block;
+			margin: 0;
+			padding: 0 0 0 5px;
+			font-weight: normal;
 		}
 
+/* STRUCTURE */
 #global {
-	display: table; width: 100%; height: 100%;
-	}
-	#menu {
-		display: table-cell; width: 20%;
-		background: #eee; border-right: 1px solid #999; vertical-align: top;
-		}
-		#addTaskMenu form {
-			display: table; width: 100%; height: 49px; padding: 0;
-			background: #eee; text-align: center; border-bottom: 1px solid #aaa;
-			}
-			#addTaskMenu input {
-				display: table-cell; height: 49px; margin: 0; padding: 0;
-				border: none; border-radius: 0;
-				}
-				#addTaskMenu input[type="text"] {
-					width: 80%;
-					}
-				#addTaskMenu input[type="submit"] {
-					width: 20%;
-					background: #ddd; cursor: pointer; box-shadow: none;
-					}
-	#content {
-		display: table-cell; width: 100%; height: 100%;
+	display: table;
+	width: 100%;
+	height: 100%;
+}
+	.aside {
+		display: table-cell;
+		height: 100%;
+		width: 250px;
 		vertical-align: top;
-		}
-		#panel {
-			display: table; height: 100%; width: 100%;
-			}
-			#panel .nothing {
-				display: table-cell; width: 100%;
-				background: #f9f9f9; text-align: center; vertical-align: middle;
-				}
-			#listTasks {
-				display: table-cell; width: 50%;
-				background: #f9f9f9; border-right: 1px solid #999;
-				}
-				#listTasks .line {
-					display: table; height: 50%; width: 100%;
-					}
-					#listTasks .line .cell {
-						display: table-cell; width: 100%;
-						}
-						#listTasks .line .cell ul {
-							overflow: auto;
-							}
-				#detailTask form {
-					overflow: auto;
-					border-top: 1px solid #aaa;
-					}
-					#detailTask a.button {
-						display: inline-block; width: 50%; margin: 0; height: 50px;
-						background-color: #eee; color: #000; vertical-align: middle; line-height: 46px; border-radius: 0; border: none; border-top: 1px solid #aaa;
-						}
-						#detailTask a.button:hover {
-							background-color: #ddd;
-							}
-			#manageTask {
-				display: table-cell; width: 50%;
-				border-right: 1px solid #999;
-				}
-			#optionPanel {
-				display: table-cell; width: 20%;
-				border-right: 1px solid #999;
-				}
-			#options {
-				display: table-cell; width: 25%;
-				background: #f9f9f9; border-right: 1px solid #999;
-				}
-			#configuration {
-				display: table-cell; width: 50%;
-				background: #fff;
-				}
-
-span.date {
-	color: #999; font-size: 80%; line-height: 15px;
+		border-right: 1px solid #aaa;
+		background: #fff;
 	}
-span a.delete {
-	display: inline-block; width: 20px; float: right;
-	background: url("img/delete.png") center center no-repeat; color: #000; text-decoration: none;
+		.aside.large {
+			width: 500px;
+		}
+		.aside ul {
+			margin: 0;
+			list-style: none;
+		}
+			.aside li {
+				width: 100%;
+				height: 50px;
+				overflow: hidden;
+				line-height: 50px;
+			}
+				.aside li > a, .aside li > span {
+					display: block;
+					width: 90%;
+					padding: 0 5%;
+				}
+					.aside li > a:hover, .aside li > span:hover {
+						text-decoration: none;
+						background: #fafafa;
+					}
+					.aside li.disable > span {
+						background: #fff;
+					}
+					.aside li > a > span, .aside li > span > span {
+						float: right;
+						padding: 0 5px;
+						font-size: 80%;
+					}
+				.aside li.active > a {
+					background: #0062BE;
+					color: #fff;
+				}
+				.aside li.disable > span {
+					background: #fafafa;
+					color: #aaa;
+				}
+				.aside li > h2 {
+					height: 50px;
+					padding: 0;
+					text-align: center;
+					background: #eee;
+					line-height: 50px;
+					color: #666;
+					text-shadow: 0 0 2px #aaa;
+				}
+				
+		.aside form#addTaskMenu {
+			display: table;
+			width: 250px;
+			margin: 0;
+			padding: 0;
+			background: #f0f0f0;
+			border: none;
+			border-bottom: 1px solid #aaa;
+			border-radius: 0;
+			box-shadow: none;
+		}
+			.aside form#addTaskMenu input {
+				display: inline-block;
+				height: 48px;
+				line-height: 48px;
+			}
+				.aside form#addTaskMenu input[type="text"] {
+					width: 200px;
+					margin: 0;
+					padding: 0;
+					border: none !important;
+					border-radius: 0;
+				}
+				.aside form#addTaskMenu input[type="submit"] {
+					width: 50px;
+					margin: 0;
+					padding: 0;
+					border: none;
+					border-radius: 0;
+				}
+		.aside form#options {
+			width: 230px;
+			margin: 0;
+			padding: 20px 10px;
+			background: #fff;
+			border: none;
+			border-top: 1px solid #aaa;
+			border-radius: 0;
+			box-shadow: none;
+		}
+			.aside form#options h2 {
+				padding: 0;
+				text-align: center;
+			}
+			.aside form#options input[type="date"] {
+				width: 100%;
+				padding: 0 5px;
+			}
+		#main_aside {
+			position: fixed;
+		}
+	#main {
+		display: table-cell;
+		height: 100%;
+		line-height: 180%;
+		background: #fafafa;
+		vertical-align: top;
+	}
+		#main .table {
+			display: table;
+			width: 100%;
+			height: 100%;
+		}
+			#main .table .content_table {
+				width: 450px;
+				margin: 30px auto;
+			}
+				#main .table .content_table a.button {
+					display: inline-block;
+					width: 210px;
+					min-height: 50px;
+					margin: 20px 6px;
+					background: #eee;
+					text-align: center;
+					line-height: 50px;
+					border: 1px solid #ddd;
+					border-radius: 5px;
+					vertical-align: middle;
+				}
+					#main .table .content_table a.button:hover {
+						background: #fff;
+						text-decoration: none;
+					}
+		#main .nothing {
+			display: table-cell;
+			width: 100%;
+			height: 100%;
+			vertical-align: middle;
+			text-align: center;
+		}
+
+/*** TASKS ***/
+li.today > a {
+	background: #f6f6f6;
+}
+li.event > a, li.event > span {
+	background-image: url("img/event.png") !important;
+	background-position: 5px center !important;
+	background-repeat: no-repeat !important;
+	
+}
+li.reminder > a, li.reminder > span {
+	background-image: url("img/reminder.png") !important;
+	background-position: 5px center !important;
+	background-repeat: no-repeat !important;
+}
+li.delay > a {
+	background-color: #fdd;
+}
+	li.delay > a:hover {
+		background-color: #ffd0d0;
+	}
+
+/*** PAGINATION ***/
+a.pager-previous, a.pager-next {
+	display: inline-block;
+	width: 50%;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+}
+	a.pager-next {
+		float: right;
+	}
+a#load_more {
+	display: block;
+	width: 100%;
+	height: 50px;
+	background: #eee;
+	line-height: 50px;
+	text-align: center;
+	font-weight: bold;
+}
+	a#load_more.disable {
+		text-decoration: none !important;
+		color: #666;
+		cursor: default;
 	}

@@ -1,6 +1,6 @@
-<div id="panel">
+<div class="table">
 	<?php if (!empty ($this->tasks)) { ?>
-	<div id="listTasks">
+	<div class="aside">
 		<ul>
 			<?php $tasks = array_reverse ($this->tasks); ?>
 			<?php foreach ($tasks as $task) { ?>
@@ -12,9 +12,10 @@
 	</div>
 	
 	<?php $task = $tasks[0]; ?>
-	<div id="manageTask">
-		<h2><?php echo $task->libelle (); ?></h2>
+	<div class="content_table">
 		<form method="post" action="<?php echo Url::display (array ('c' => 'task', 'a' => 'validate')); ?>">
+			<h2><?php echo $task->libelle (); ?></h2>
+			
 			<label for="date"><?php echo Translate::t ('date'); ?></label>
 			<input type="date" name="date" id="date" placeholder="<?php echo Translate::t ('year-month-day'); ?>" />
 			
@@ -37,8 +38,8 @@
 			
 			<input type="hidden" name="id" value="<?php echo $task->id (); ?>" />
 			
-			<a class="button delete" href="<?php echo Url::display (array ('c' => 'task', 'a' => 'delete', 'params' => array ('id' => $task->id (), 'type' => 'inbox'))); ?>"><?php echo Translate::t ('delete'); ?></a>
 			<input type="submit" value="<?php echo Translate::t ('validate'); ?>" />
+			<button formaction="<?php echo Url::display (array ('c' => 'task', 'a' => 'delete', 'params' => array ('id' => $task->id (), 'type' => 'inbox'))); ?>"><?php echo Translate::t ('delete'); ?></button>
 		</form>
 	</div>
 	<?php } else { ?>
