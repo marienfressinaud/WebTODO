@@ -48,6 +48,21 @@ class ContextDAO extends Model_array {
 		return HelperContext::listeDaoToContext ($contexts);
 	}
 	
+	public function listIdContexts () {
+		$contexts = $this->array;
+		
+		if (!is_array ($contexts)) {
+			$contexts = array ();
+		}
+		
+		$list = array ();
+		foreach ($contexts as $key => $c) {
+			$list[] = $key;
+		}
+		
+		return $list;
+	}
+	
 	public function searchContext ($id) {
 		$context = $this->array[$id];
 		return HelperContext::daoToContext ($context);

@@ -62,9 +62,9 @@
 	
 			<label for="reference"><?php echo Translate::t ('reference'); ?></label>
 			<select name="reference" id="reference">
-				<option value="event" <?php if ($this->task->type () == 'event') { echo 'selected="selected"'; } ?>><?php echo Translate::t ('event'); ?></option>
-				<option value="reminder" <?php if ($this->task->type () == 'reminder') { echo 'selected="selected"'; } ?>><?php echo Translate::t ('reminder'); ?></option>
 				<option value="action" <?php if ($this->task->type () == 'action') { echo 'selected="selected"'; } ?>><?php echo Translate::t ('action'); ?></option>
+				<option value="reminder" <?php if ($this->task->type () == 'reminder') { echo 'selected="selected"'; } ?>><?php echo Translate::t ('reminder'); ?></option>
+				<option value="event" <?php if ($this->task->type () == 'event') { echo 'selected="selected"'; } ?>><?php echo Translate::t ('event'); ?></option>
 			</select>
 	
 			<label for="context"><?php echo Translate::t ('context'); ?></label>

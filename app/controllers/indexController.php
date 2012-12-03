@@ -33,7 +33,8 @@ class indexController extends ActionController {
 		$day = strtotime (date ('Y-m-d', $day));
 		$this->view->day = $day;
 		
-		$this->view->contextsCheck = Session::param ('contexts', array ());
+		//print_r ($contextDAO->listContextsArray ());
+		$this->view->contextsCheck = Session::param ('contexts', $contextDAO->listIdContexts ());
 		
 		// Gestion des tâches à afficher
 		$this->view->tasks = array ();
@@ -143,11 +144,13 @@ function sortTasksByDate ($task1, $task2) {
 	$date1 = $task1->date (true);
 	$date2 = $task2->date (true);
 	
-	if ($date1 == 0) {
+	if ($date1 == 0 && $date2 == 0) {
+		return $task1->id () - $task2->id ();
+	} elseif ($date1 == 0) {
 		return 1;
 	} elseif ($date2 == 0) {
 		return -1;
-	} else {
+	} else {	
 		return $date1 - $date2;
 	}
 }
@@ -156,7 +159,9 @@ function sortArchivesByDate ($task1, $task2) {
 	$date1 = $task1->dateFin (true);
 	$date2 = $task2->dateFin (true);
 	
-	if ($date1 == 0) {
+	if ($date1 == 0 && $date2 == 0) {
+		return $task1->id () - $task2->id ();
+	} if ($date1 == 0) {
 		return 1;
 	} elseif ($date2 == 0) {
 		return -1;
