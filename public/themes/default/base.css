@@ -89,11 +89,18 @@ form {
 		font-size: 90%;
 	}
 		textarea {
-			min-height: 100px;
+			min-height: 150px;
 			font-size: 110%;
 			line-height: 150%;
 			font-family: Monospace;
 		}
+		select.multi {
+			min-height: 150px;
+			padding: 0;
+		}
+			select.multi option {
+				padding: 3px 5px;
+			}
 	input[type="submit"], button {
 		display: block;
 		height: 40px;
@@ -174,7 +181,7 @@ form {
 					background: #eee;
 					line-height: 50px;
 					color: #666;
-					text-shadow: 0 0 2px #aaa;
+					font-size: 120%;
 				}
 				
 		.aside form#addTaskMenu {
@@ -246,16 +253,22 @@ form {
 			}
 				#main .table .content_table a.button {
 					display: inline-block;
-					width: 210px;
+					width: 223px;
 					min-height: 50px;
-					margin: 20px 6px;
+					margin: 20px 0 0;
 					background: #eee;
 					text-align: center;
 					line-height: 50px;
 					border: 1px solid #ddd;
-					border-radius: 5px;
+					border-right: none;
+					border-radius: 5px 0 0 5px;
 					vertical-align: middle;
 				}
+					#main .table .content_table a.button+a.button {
+						border-right: 1px solid #ddd;
+						border-left: none;
+						border-radius: 0 5px 5px 0;
+					}
 					#main .table .content_table a.button:hover {
 						background: #fff;
 						text-decoration: none;

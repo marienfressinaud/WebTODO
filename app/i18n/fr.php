@@ -33,4 +33,5 @@ return array (
 	'validate'                      => 'Valider',
 	'year-month-day'                => 'Année-Mois-Jour',
 	'go back home'                  => 'Retour à l\'accueil',
+	'select task'                   => 'Veuillez sélectionner une tâche',
 );

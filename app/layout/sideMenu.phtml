@@ -1,6 +1,6 @@
 <div id="main_adise" class="aside">
 	<form id="addTaskMenu" method="post" action="<?php echo Url::display (array ('c' => 'task', 'a' => 'add')); ?>">
-		<input type="text" name="task" placeholder="<?php echo Translate::t ('add activity'); ?>" /><!--
+		<input type="text" name="task" placeholder="<?php echo Translate::t ('add activity'); ?>" autocomplete="off" /><!--
 		--><input type="submit" value="+" />
 	</form>
 
@@ -22,7 +22,7 @@
 	<?php if (Request::actionName () == 'activities') { ?>
 	<form id="options" method="post" action="">
 		<h2>Filtrer</h2>
-		<input type="date" name="date" id="date" placeholder="<?php echo Translate::t ('year-month-day'); ?>" value="<?php echo date ('Y-m-d', $this->day); ?>" />
+		<input type="date" name="date" id="date_filtre" placeholder="<?php echo Translate::t ('year-month-day'); ?>" value="<?php echo date ('Y-m-d', $this->day); ?>" />
 
 		<?php foreach ($this->contexts as $context) { ?>
 		<div class="checkbox_group">

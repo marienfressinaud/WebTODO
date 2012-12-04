@@ -22,6 +22,11 @@
 	<?php if (isset ($this->task)) { ?>
 		<?php if (!$this->update) { ?>
 		<div class="content_table">
+			<h1><?php echo $this->task->libelle (); ?></h1>
+		
+			<a class="button update" href="<?php echo Url::display (array ('c' => 'task', 'a' => 'update', 'params' => array ('id' => $this->task->id (), 'type' => $this->task->type ()))); ?>"><?php echo Translate::t ('edit'); ?></a><!--
+			--><a class="button" href="<?php echo Url::display (array ('c' => 'archive', 'a' => 'archive', 'params' => array ('id' => $this->task->id (), 'type' => $this->task->type ()))); ?>"><?php echo Translate::t ('finish'); ?></a>
+			
 			<?php if ($this->task->date (true) > 0) { ?>
 			<label for="date"><?php echo Translate::t ('date'); ?></label>
 			<span class="info" id="date"><?php echo $this->task->date (); ?></span>
@@ -45,10 +50,6 @@
 			<label for="notes"><?php echo Translate::t ('notes'); ?></label>
 			<span class="info" id="notes"><?php echo $notes; ?></span>
 			<?php } ?>
-			<br />
-	
-			<a class="button update" href="<?php echo Url::display (array ('c' => 'task', 'a' => 'update', 'params' => array ('id' => $this->task->id (), 'type' => $this->task->type ()))); ?>"><?php echo Translate::t ('edit'); ?></a><!--
-			--><a class="button" href="<?php echo Url::display (array ('c' => 'archive', 'a' => 'archive', 'params' => array ('id' => $this->task->id (), 'type' => $this->task->type ()))); ?>"><?php echo Translate::t ('finish'); ?></a>
 		</div>
 		
 		<?php } else { ?>
@@ -82,8 +83,9 @@
 			<input type="submit" value="Valider" />
 		</form>
 		<?php } ?>
+	<?php } else { ?>
+	<div class="table"><div class="nothing"><?php echo Translate::t ('select task'); ?></div></div>
 	<?php } ?>
-	</div>
 	<?php } else { ?>
 	<div class="nothing"><?php echo Translate::t ('nothing to do'); ?></div>
 	<?php } ?>
