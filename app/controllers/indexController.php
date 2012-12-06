@@ -146,7 +146,7 @@ function sortTasksByDate ($task1, $task2) {
 	$res = $date1 - $date2;
 	
 	if ($res == 0) {
-		return $task1->id () - $task2->id ();
+		return strnatcasecmp ($task1->libelle (), $task2->libelle ());
 	} else {
 		if ($date1 == 0) {
 			return 1;
@@ -164,7 +164,7 @@ function sortArchivesByDate ($task1, $task2) {
 	$res = $date1 - $date2;
 	
 	if ($res == 0) {
-		return $task1->id () - $task2->id ();
+		return strnatcasecmp ($task1->libelle (), $task2->libelle ());
 	} else {
 		if ($date1 == 0) {
 			return 1;

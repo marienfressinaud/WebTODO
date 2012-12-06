@@ -1,7 +1,7 @@
 <div class="table">
 	<?php if (!empty ($this->tasks)) { ?>
 	<ul class="aside large">
-		<li><h2><?php echo Translate::t ('date to do'); ?> <?php echo date (Translate::t ('date format'), $this->day); ?></h2></li>
+		<li><h2><?php echo Translate::t ('date to do'); ?> <?php echo timestamptodate ($this->day, false); ?></h2></li>
 		<?php foreach ($this->tasks as $task) { ?>
 		<?php
 			$class = $task->type ();

@@ -10,8 +10,13 @@ class App_FrontController extends FrontController {
 		Session::init ();
 		Translate::init ();
 		
+		$this->initLibs ();
 		$this->initModels ();
 		$this->initView ();
+	}
+	
+	private function initLibs () {
+		include (LIB_PATH . '/lib_webtodo.php');
 	}
 	
 	private function initModels () {
