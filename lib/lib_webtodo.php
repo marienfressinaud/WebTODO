@@ -51,3 +51,39 @@ function timestamptodate ($t, $hour = true) {
 		return $date;
 	}
 }
+
+function sortTasksByDate ($task1, $task2) {
+	$date1 = $task1->date (true);
+	$date2 = $task2->date (true);
+	$res = $date1 - $date2;
+
+	if ($res == 0) {
+		return strnatcasecmp ($task1->libelle (), $task2->libelle ());
+	} else {
+		if ($date1 == 0) {
+			return 1;
+		} elseif ($date2 == 0) {
+			return -1;
+		} else {
+			return $date1 - $date2;
+		}
+	}
+}
+
+function sortArchivesByDate ($task1, $task2) {
+	$date1 = $task1->dateFin (true);
+	$date2 = $task2->dateFin (true);
+	$res = $date1 - $date2;
+
+	if ($res == 0) {
+		return strnatcasecmp ($task1->libelle (), $task2->libelle ());
+	} else {
+		if ($date1 == 0) {
+			return 1;
+		} elseif ($date2 == 0) {
+			return -1;
+		} else {
+			return $date2 - $date1;
+		}
+	}
+}

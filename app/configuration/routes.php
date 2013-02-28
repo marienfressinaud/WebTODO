@@ -91,4 +91,9 @@ return array (
 		'controller' => 'api',
 		'action'     => 'add'
 	),
+	array (
+		'route'      => '/api/lister_taches',
+		'controller' => 'api',
+		'action'     => 'listTasks'
+	),
 );

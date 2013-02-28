@@ -88,4 +88,15 @@ class Task extends Model {
 	public function _notes ($notes) {
 		$this->notes = $notes;
 	}
+
+	public function toArray() {
+		return array (
+			'id' => $this->id,
+			'type' => $this->type,
+			'libelle' => $this->libelle,
+			'date' => $this->date,
+			'contexts' => $this->context (true),
+			'notes' => $this->notes,
+		);
+	}
 }
