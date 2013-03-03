@@ -152,6 +152,7 @@ form {
 				.aside li > a, .aside li > span {
 					display: block;
 					width: 90%;
+					height: 50px;
 					padding: 0 5%;
 				}
 					.aside li > a:hover, .aside li > span:hover {
@@ -232,9 +233,6 @@ form {
 				width: 100%;
 				padding: 0 5px;
 			}
-		#main_aside {
-			position: fixed;
-		}
 	#main {
 		display: table-cell;
 		height: 100%;
@@ -250,10 +248,11 @@ form {
 			#main .table .content_table {
 				width: 450px;
 				margin: 30px auto;
+				padding: 0 10px;
 			}
 				#main .table .content_table a.button {
 					display: inline-block;
-					width: 223px;
+					width: 200px;
 					min-height: 50px;
 					margin: 20px 0 0;
 					background: #eee;
@@ -328,3 +327,10 @@ a#load_more {
 		color: #666;
 		cursor: default;
 	}
+
+
+@media(max-width: 840px) {
+	#main_aside {
+		display: none;
+	}
+}
