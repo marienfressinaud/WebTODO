@@ -19,7 +19,7 @@
 		<?php } ?>
 	</ul>
 		
-	<?php if (isset ($this->task)) { ?>
+	<?php if ($this->task) { ?>
 		<?php if (!$this->update) { ?>
 		<div class="content_table">
 			<h1><?php echo $this->task->libelle (); ?></h1>

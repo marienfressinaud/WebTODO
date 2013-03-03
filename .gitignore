@@ -1,4 +1,4 @@
 log/application.log
-app/configuration/application.ini
+lib/minz
 public/data/archives
 public/data/tasks

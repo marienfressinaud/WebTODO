@@ -23,6 +23,8 @@ class archiveController extends ActionController {
 		);
 		$taskArchiveDAO->addTask ($values, $type);
 		$taskDAO->deleteTask ($id, $type);
+
+		Session::_param ('task');
 		
 		Request::forward (array ('a' => 'activities'), true);
 	}

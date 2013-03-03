@@ -11,6 +11,7 @@ Cette application a été développée dans un but purement personnel. Ceci expl
 Installation
 ============
 1) Récupérer les sources et les déposer sur le serveur web
+2) Exécuter le script ./build.sh pour récupérer le framework Minz
 2) Modifier dans le fichier `app/configuration/application.ini` le paramètre `base_url` pour qu'il corresponde au chemin accédant au répertoire `public` à partir du navigateur.
 3) Si votre serveur ne permet pas la réécriture d'url, mettez `use_url_rewriting` à `false` (et vous pouvez supprimer le fichier `public/.htaccess`)
 4) Assurez vous que les droits en lecture / écriture sur les fichiers situés dans `public/data` sont suffisants pour votre serveur.

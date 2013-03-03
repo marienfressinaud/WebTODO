@@ -1,6 +1,12 @@
 <?php
   
 class indexController extends ActionController {
+	public function indexAction () {
+		Request::forward (array (
+			'a' => 'activities'
+		));
+	}
+
 	public function activitiesAction () {
 		$taskDAO = new TaskDAO ();
 		$contextDAO = new ContextDAO ();
@@ -58,11 +64,13 @@ class indexController extends ActionController {
 		
 		// Gestion de l'affichage d'une tâche spécifique
 		$task = Session::param ('task');
+		$this->view->task = false;
 		if ($task !== false) {
 			$this->view->task = $taskDAO->searchTask ($task['id'], $task['type']);
 		}
 		
 		// Gestion si on veut modifier tâche
+		$this->view->update = false;
 		if (Session::param ('update') === true) {
 			$this->view->update = true;
 			Session::_param ('update');
